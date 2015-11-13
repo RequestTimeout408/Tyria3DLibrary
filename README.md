@@ -19,18 +19,15 @@ This project uses gulp browserify for building the output. I'm sorry if the curr
 unnecessary dependecies.
 
 ###Usage:
-``
-npm install
+
+``npm install
 gulp formats
-gulp
-``
+gulp``
 
- ###Building documentation
- This project uses YUIDoc for javadoc-ish documentation creation.
- See http://yui.github.io/yuidoc/
+###Building documentation
+This project uses YUIDoc for javadoc-ish documentation creation.
+See http://yui.github.io/yuidoc/
 
- Usage:
- ``
- npm -g install yuidocjs
- yuidoc
- ``
+Usage:
+``npm -g install yuidocjs
+yuidoc``
