@@ -1,37 +1,36 @@
+#Tyria 3D Library
+Tyria 3D Library is an open source javascript library aimed at accessing and interpreting data from Guild Wars 2 .dat files.
 
-__/\\\\\\\\\\\\\\\__/\\\________/\\\____/\\\\\\\\\______/\\\\\\\\\\\_____/\\\\\\\\\__________________/\\\\\\\\\\___/\\\\\\\\\\\\____        
- _\///////\\\/////__\///\\\____/\\\/___/\\\///////\\\___\/////\\\///____/\\\\\\\\\\\\\______________/\\\///////\\\_\/\\\////////\\\__       
-  _______\/\\\_________\///\\\/\\\/____\/\\\_____\/\\\_______\/\\\______/\\\/////////\\\____________\///______/\\\__\/\\\______\//\\\_      
-   _______\/\\\___________\///\\\/______\/\\\\\\\\\\\/________\/\\\_____\/\\\_______\/\\\___________________/\\\//___\/\\\_______\/\\\_     
-    _______\/\\\_____________\/\\\_______\/\\\//////\\\________\/\\\_____\/\\\\\\\\\\\\\\\__________________\////\\\__\/\\\_______\/\\\_    
-     _______\/\\\_____________\/\\\_______\/\\\____\//\\\_______\/\\\_____\/\\\/////////\\\_____________________\//\\\_\/\\\_______\/\\\_   
-      _______\/\\\_____________\/\\\_______\/\\\_____\//\\\______\/\\\_____\/\\\_______\/\\\____________/\\\______/\\\__\/\\\_______/\\\__  
-       _______\/\\\_____________\/\\\_______\/\\\______\//\\\__/\\\\\\\\\\\_\/\\\_______\/\\\___________\///\\\\\\\\\/___\/\\\\\\\\\\\\/___ 
-        _______\///______________\///________\///________\///__\///////////__\///________\///______________\/////////_____\////////////_____
+As you can tell this project is just published and I will hopefully spend some time on writing more and better examples,
+and updating the documentation pretty soon! If you have any questions, feedback or suggestions feel free to contact me
+at tyria3d@gmail.com
 
 
+##Examples
+There are two exmaple applications in the examples folder. I sugest looking at the source of index.html in exmaples/ModelRenderer first!
 
-Examples
-Note that the examples run on their own pre-built libraries that **will not** be updated when re-building the library!
+
+**IMPORTANT** Note that the application in the examples folder run on their own pre-built libraries that **will not**
+be updated when re-building the library!
 
 
-Building the library
-This project uses gulp browserify for building the output
+##Building the library
+This project uses gulp browserify for building the output. I'm sorry if the current package.json is bloated with 
+unnecessary dependecies.
 
-Usage:
+###Usage:
+``
 npm install
 gulp formats
 gulp
+``
 
-
- Building documentation
+ ###Building documentation
  This project uses YUIDoc for javadoc-ish documentation creation.
  See http://yui.github.io/yuidoc/
 
  Usage:
+ ``
  npm -g install yuidocjs
- yuidoc -c yuidoc.json
- 
-
-
-
+ yuidoc
+ ``
