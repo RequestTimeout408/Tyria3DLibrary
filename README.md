@@ -21,7 +21,9 @@ unnecessary dependecies.
 ###Usage:
 
 ``npm install``
+
 ``gulp formats``
+
 ``gulp``
 
 ###Building documentation
@@ -29,5 +31,7 @@ This project uses YUIDoc for javadoc-ish documentation creation.
 See http://yui.github.io/yuidoc/
 
 Usage:
+
 ``npm -g install yuidocjs``
+
 ``yuidoc``
