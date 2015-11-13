@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HavokRenderer - Tyria 3D Library</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="Tyria 3D Library" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/DataRenderer.html">DataRenderer</a></li>
+                                <li><a href="../classes/EnvironmentRenderer.html">EnvironmentRenderer</a></li>
+                                <li><a href="../classes/GW2Chunk.html">GW2Chunk</a></li>
+                                <li><a href="../classes/GW2File.html">GW2File</a></li>
+                                <li><a href="../classes/HavokRenderer.html">HavokRenderer</a></li>
+                                <li><a href="../classes/LocalReader.html">LocalReader</a></li>
+                                <li><a href="../classes/Logger.html">Logger</a></li>
+                                <li><a href="../classes/MaterialUtils.html">MaterialUtils</a></li>
+                                <li><a href="../classes/MathUtils.html">MathUtils</a></li>
+                                <li><a href="../classes/ModelRenderer.html">ModelRenderer</a></li>
+                                <li><a href="../classes/ParserUtils.html">ParserUtils</a></li>
+                                <li><a href="../classes/PropertiesRenderer.html">PropertiesRenderer</a></li>
+                                <li><a href="../classes/RenderUtils.html">RenderUtils</a></li>
+                                <li><a href="../classes/StringRenderer.html">StringRenderer</a></li>
+                                <li><a href="../classes/T3D.html">T3D</a></li>
+                                <li><a href="../classes/TerrainRenderer.html">TerrainRenderer</a></li>
+                                <li><a href="../classes/ZoneRenderer.html">ZoneRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/T3D.html">T3D</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>HavokRenderer Class</h1>
+<div class="box meta">
+
+        <div class="extends">
+            Extends <a href="../classes/DataRenderer.html" class="crosslink">DataRenderer</a>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_dataRenderer_HavokRenderer.js.html#l3"><code>src\dataRenderer\HavokRenderer.js:3</code></a>
+        </div>
+
+            Module: <a href="../modules/T3D.html">T3D</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>A renderer that generates meshes describing the collisions of a map.</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_HavokRenderer" class="method item">
+    <h3 class="name"><code>HavokRenderer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>localReader</code>
+                </li>
+                <li class="arg">
+                        <code>settings</code>
+                </li>
+                <li class="arg">
+                        <code>context</code>
+                </li>
+                <li class="arg">
+                        <code>logger</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l3"><code>src\dataRenderer\HavokRenderer.js:3</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">localReader</code>
+                        <span class="type"><a href="../classes/LocalReader.html" class="crosslink">LocalReader</a></span>
+
+
+                    <div class="param-description">
+                        <p>The LocalReader instance to read data from.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">settings</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Any settings used by this renderer.
+<em>Must</em> specify &quot;mapFile&quot;, a GW2File. If &quot;visible&quot; is specified and true, the generated meshes will be textured
+with a MeshNormalMaterial, otherwise they will not be visible.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Shared value object between renderers.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">logger</code>
+                        <span class="type"><a href="../classes/Logger.html" class="crosslink">Logger</a></span>
+
+
+                    <div class="param-description">
+                        <p>The logging class to use for progress, warnings, errors et cetera.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method">
+                                <a href="#method_animationFromGeomIndex">animationFromGeomIndex</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getCollisionsForAnimation">getCollisionsForAnimation</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getOutput">getOutput</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_parseAllModels description">parseAllModels description</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_parseHavokMesh">parseHavokMesh</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_renderAsync">renderAsync</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_renderMesh">renderMesh</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_renderModels">renderModels</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_seedRandom">seedRandom</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_animationFromGeomIndex" class="method item">
+    <h3 class="name"><code>animationFromGeomIndex</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>propGeomIndex</code>
+                </li>
+                <li class="arg">
+                        <code>geometries</code>
+                </li>
+                <li class="arg">
+                        <code>animations</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">type</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l118"><code>src\dataRenderer\HavokRenderer.js:118</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">propGeomIndex</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">geometries</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">animations</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">type</span>:
+                    <p>[description]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getCollisionsForAnimation" class="method item">
+    <h3 class="name"><code>getCollisionsForAnimation</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>animation</code>
+                </li>
+                <li class="arg">
+                        <code>collisions</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">type</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l45"><code>src\dataRenderer\HavokRenderer.js:45</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">animation</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">collisions</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">type</span>:
+                    <p>[description]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getOutput" class="method item inherited">
+    <h3 class="name"><code>getOutput</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>otherClass</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/DataRenderer.html#method_getOutput">DataRenderer</a>:
+        <a href="../files/src_dataRenderer_DataRenderer.js.html#l55"><code>src\dataRenderer\DataRenderer.js:55</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Gets the output value object for a specified class within the context.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">otherClass</code>
+                        <span class="type">Class</span>
+
+
+                    <div class="param-description">
+                        <p>The class to fetch the output value object for.
+If not specified the class of this instance will be used.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>The output value object for this class within the context.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_parseAllModels description" class="method item">
+    <h3 class="name"><code>parseAllModels description</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>models</code>
+                </li>
+                <li class="arg">
+                        <code>mat</code>
+                </li>
+                <li class="arg">
+                        <code>title</code>
+                </li>
+                <li class="arg">
+                        <code>chunkSize</code>
+                </li>
+                <li class="arg">
+                        <code>offset</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">type</span>
+        </span>
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l65"><code>src\dataRenderer\HavokRenderer.js:65</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">models</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">mat</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">title</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">chunkSize</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">offset</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">type</span>:
+                    <p>callback          [description]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_parseHavokMesh" class="method item">
+    <h3 class="name"><code>parseHavokMesh</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>collision</code>
+                </li>
+                <li class="arg">
+                        <code>mat</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">type</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l183"><code>src\dataRenderer\HavokRenderer.js:183</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">collision</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">mat</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">type</span>:
+                    <p>[description]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_renderAsync" class="method item">
+    <h3 class="name"><code>renderAsync</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/DataRenderer.html#method_renderAsync">
+                DataRenderer
+            </a>
+            but overwritten in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l245"><code>src\dataRenderer\HavokRenderer.js:245</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Output fileds generated:</p>
+<ul>
+<li><em>boundingBox</em> Array of values describing the bounding box of all collision.</li>
+<li><em>meshes</em> An array of THREE.Mesh objects visualizing all collision in the map.</li>
+</ul>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fires when renderer is finished, does not take arguments.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_renderMesh" class="method item">
+    <h3 class="name"><code>renderMesh</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>collision</code>
+                </li>
+                <li class="arg">
+                        <code>model</code>
+                </li>
+                <li class="arg">
+                        <code>mat</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">type</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l135"><code>src\dataRenderer\HavokRenderer.js:135</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">collision</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">model</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">mat</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">type</span>:
+                    <p>[description]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_renderModels" class="method item">
+    <h3 class="name"><code>renderModels</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l26"><code>src\dataRenderer\HavokRenderer.js:26</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>[description]</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_seedRandom" class="method item">
+    <h3 class="name"><code>seedRandom</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">type</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_dataRenderer_HavokRenderer.js.html#l173"><code>src\dataRenderer\HavokRenderer.js:173</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>TODO</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">type</span>:
+                    <p>[description]</p>
+
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

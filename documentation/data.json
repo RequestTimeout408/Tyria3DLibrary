@@ -1,0 +1,2767 @@
+{
+    "project": {
+        "name": "Tyria 3D Library",
+        "description": "Tyria 3D Library: a library for exploring Guild Wars 2 data formats.",
+        "version": "1.0.3",
+        "url": "http://www.tyria3d.com/"
+    },
+    "files": {
+        "src\\LocalReader\\LocalReader.js": {
+            "name": "src\\LocalReader\\LocalReader.js",
+            "modules": {},
+            "classes": {
+                "LocalReader": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\DataRenderer.js": {
+            "name": "src\\dataRenderer\\DataRenderer.js",
+            "modules": {},
+            "classes": {
+                "DataRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\EnvironmentRenderer.js": {
+            "name": "src\\dataRenderer\\EnvironmentRenderer.js",
+            "modules": {},
+            "classes": {
+                "EnvironmentRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\HavokRenderer.js": {
+            "name": "src\\dataRenderer\\HavokRenderer.js",
+            "modules": {},
+            "classes": {
+                "HavokRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\ModelRenderer.js": {
+            "name": "src\\dataRenderer\\ModelRenderer.js",
+            "modules": {},
+            "classes": {
+                "ModelRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\PropertiesRenderer.js": {
+            "name": "src\\dataRenderer\\PropertiesRenderer.js",
+            "modules": {},
+            "classes": {
+                "PropertiesRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\StringRenderer.js": {
+            "name": "src\\dataRenderer\\StringRenderer.js",
+            "modules": {},
+            "classes": {
+                "StringRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\TerrainRenderer.js": {
+            "name": "src\\dataRenderer\\TerrainRenderer.js",
+            "modules": {},
+            "classes": {
+                "TerrainRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\dataRenderer\\ZoneRenderer.js": {
+            "name": "src\\dataRenderer\\ZoneRenderer.js",
+            "modules": {},
+            "classes": {
+                "ZoneRenderer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\format\\definition\\AllFormats.js": {
+            "name": "src\\format\\definition\\AllFormats.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "T3D": 1
+            },
+            "namespaces": {}
+        },
+        "src\\format\\file\\GW2Chunk.js": {
+            "name": "src\\format\\file\\GW2Chunk.js",
+            "modules": {},
+            "classes": {
+                "GW2Chunk": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\format\\file\\GW2File.js": {
+            "name": "src\\format\\file\\GW2File.js",
+            "modules": {},
+            "classes": {
+                "GW2File": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\util\\MaterialUtils.js": {
+            "name": "src\\util\\MaterialUtils.js",
+            "modules": {},
+            "classes": {
+                "MaterialUtils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\util\\MathUtils.js": {
+            "name": "src\\util\\MathUtils.js",
+            "modules": {},
+            "classes": {
+                "MathUtils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\util\\ParserUtils.js": {
+            "name": "src\\util\\ParserUtils.js",
+            "modules": {},
+            "classes": {
+                "ParserUtils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\util\\RenderUtils.js": {
+            "name": "src\\util\\RenderUtils.js",
+            "modules": {},
+            "classes": {
+                "RenderUtils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Logger.js": {
+            "name": "src\\Logger.js",
+            "modules": {},
+            "classes": {
+                "Logger": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\T3DLib.js": {
+            "name": "src\\T3DLib.js",
+            "modules": {
+                "T3D": 1
+            },
+            "classes": {
+                "T3D": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "T3D": {
+            "name": "T3D",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "LocalReader": 1,
+                "DataRenderer": 1,
+                "EnvironmentRenderer": 1,
+                "HavokRenderer": 1,
+                "ModelRenderer": 1,
+                "PropertiesRenderer": 1,
+                "StringRenderer": 1,
+                "TerrainRenderer": 1,
+                "ZoneRenderer": 1,
+                "T3D": 1,
+                "GW2Chunk": 1,
+                "GW2File": 1,
+                "MaterialUtils": 1,
+                "MathUtils": 1,
+                "ParserUtils": 1,
+                "RenderUtils": 1,
+                "Logger": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "main",
+            "file": "src\\Logger.js",
+            "line": 1,
+            "description": "Tyria 3D Library main class.\n\nUse this static class to access file parsers- and data renderer classes.\n\nThis class also works as a factory for creating\nLocalReader instances that looks up and inflates files from the Guild Wars 2 .dat.",
+            "itemtype": "main"
+        }
+    },
+    "classes": {
+        "LocalReader": {
+            "name": "LocalReader",
+            "shortname": "LocalReader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 17,
+            "description": "A statefull class that handles reading and inflating data from a local GW2 dat file.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "datFile",
+                    "description": "A core JS File instance, must refer to the GW2 .dat",
+                    "type": "File"
+                },
+                {
+                    "name": "version",
+                    "description": "T3D version.",
+                    "type": "String"
+                },
+                {
+                    "name": "logger",
+                    "description": "{{#crossLink \"Logger\"}}{{/crossLink}} object responsible for UI logging.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "DataRenderer": {
+            "name": "DataRenderer",
+            "shortname": "DataRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\DataRenderer.js",
+            "line": 3,
+            "description": "Base class for data interpretors a.k.a. 'Renderers'\n\nRenderers are classes that collect and interpret data from the dat file.\n\nA {{#crossLink \"LocalReader\"}}{{/crossLink}} instance is used for accessing data from the dat.\n\nA {{#crossLink \"Logger\"}}{{/crossLink}} is used for posting progress output or error messages.\n\nMost Renderers use one or more\n{{#crossLink \"GW2Chunk\"}}GW2Chunks{{/crossLink}}, typed data structures that can be read from\n{{#crossLink \"GW2File\"}}GW2Files{{/crossLink}}.\n\nThe generated data, be it strings, numbers or meshes are put into a value object structure called\nthe 'context'. The context can store data generated by multiple renderers and makes sure each\nrenderer type, or class has it's own value object within the context. This enables one renderer\nto read data written by another renderer wihtout having to worry about overwriting existing data\nwithin the context. Keep in mind that you will have to manually pass and clean the conext object!\n\nA clean context object should just be the empty javasript object : {}.\n\nWhen a Renderer is done it will fire the callback and any view interrested in retrieving the generated\ndata from the context can read it using\n{{#crossLink \"T3D/getContextValue:method\"}}{{/crossLink}}.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "EnvironmentRenderer": {
+            "name": "EnvironmentRenderer",
+            "shortname": "EnvironmentRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\EnvironmentRenderer.js",
+            "line": 4,
+            "description": "A renderer that generates some of the environment objects of a map.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"mapFile\", a GW2File.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "HavokRenderer": {
+            "name": "HavokRenderer",
+            "shortname": "HavokRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 3,
+            "description": "A renderer that generates meshes describing the collisions of a map.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"mapFile\", a GW2File. If \"visible\" is specified and true, the generated meshes will be textured\n with a MeshNormalMaterial, otherwise they will not be visible.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "ModelRenderer": {
+            "name": "ModelRenderer",
+            "shortname": "ModelRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\ModelRenderer.js",
+            "line": 4,
+            "description": "A renderer that generates meshes for a single model file.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"id\" the base ID or file ID of the model to generate meshes for.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "PropertiesRenderer": {
+            "name": "PropertiesRenderer",
+            "shortname": "PropertiesRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\PropertiesRenderer.js",
+            "line": 4,
+            "description": "A renderer that generates property models for a map.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"mapFile\", a GW2File.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "StringRenderer": {
+            "name": "StringRenderer",
+            "shortname": "StringRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\StringRenderer.js",
+            "line": 4,
+            "description": "A renderer that generates a list of readable strings from a \"strs\" file.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"id\" the base ID or file ID of the string file to read strings from.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "TerrainRenderer": {
+            "name": "TerrainRenderer",
+            "shortname": "TerrainRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\TerrainRenderer.js",
+            "line": 5,
+            "description": "A renderer that generates the meshes for the terrain of a map.\n\n Requires a context previously populated by a \n {{#crossLink \"EnvironmentRenderer\"}}{{/crossLink}}.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"mapFile\", a GW2File.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "ZoneRenderer": {
+            "name": "ZoneRenderer",
+            "shortname": "ZoneRenderer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\dataRenderer\\ZoneRenderer.js",
+            "line": 4,
+            "description": "A renderer that generates zone models for a map.",
+            "is_constructor": 1,
+            "extends": "DataRenderer",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader instance to read data from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Any settings used by this renderer.\n *Must* specify \"mapFile\", a GW2File.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "Shared value object between renderers.",
+                    "type": "Object"
+                },
+                {
+                    "name": "logger",
+                    "description": "The logging class to use for progress, warnings, errors et cetera.",
+                    "type": "Logger"
+                }
+            ]
+        },
+        "T3D": {
+            "name": "T3D",
+            "shortname": "T3D",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\T3DLib.js",
+            "line": 9,
+            "description": "Tyria 3D Library main class.\n\nUse this static class to access file parsers- and data renderer classes.\n\nThis class also works as a factory for creating\nLocalReader instances that looks up and inflates files from the Guild Wars 2 .dat.",
+            "mainName": "T3D",
+            "tag": "main",
+            "itemtype": "main",
+            "_main": true,
+            "static": 1
+        },
+        "GW2Chunk": {
+            "name": "GW2Chunk",
+            "shortname": "GW2Chunk",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 68,
+            "description": "Basic chunk parsing functionality for Guild Wars 2 file chunks",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "ds",
+                    "description": "A DataStream containing deflated chunk binary data.",
+                    "type": "DataStream"
+                },
+                {
+                    "name": "addr",
+                    "description": "Offset of chunk start within the DataStream",
+                    "type": "Number"
+                }
+            ]
+        },
+        "GW2File": {
+            "name": "GW2File",
+            "shortname": "GW2File",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 12,
+            "description": "Basic header and chunk parsing functionality for Guild Wars 2 pack files (PF)",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "ds",
+                    "description": "A DataStream containing deflated file binary data.",
+                    "type": "DataStream"
+                },
+                {
+                    "name": "addr",
+                    "description": "Offset of file start within the DataStream",
+                    "type": "Number"
+                },
+                {
+                    "name": "noChunks",
+                    "description": "If true, the file does not parse its\nchunks on creation.",
+                    "type": "Boolean"
+                }
+            ]
+        },
+        "MaterialUtils": {
+            "name": "MaterialUtils",
+            "shortname": "MaterialUtils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 8,
+            "description": "Collection of methods for generating THREE materials and textures\nfrom Guild Wars 2 data formats.",
+            "static": 1
+        },
+        "MathUtils": {
+            "name": "MathUtils",
+            "shortname": "MathUtils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\util\\MathUtils.js",
+            "line": 1,
+            "description": "Collection Math and sorting methods",
+            "static": 1
+        },
+        "ParserUtils": {
+            "name": "ParserUtils",
+            "shortname": "ParserUtils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\util\\ParserUtils.js",
+            "line": 1,
+            "description": "Collection of methods used for parsing complex data types from the .dat\n\nMost of these methods are only refered by the automatically generated script\nAllFormats.js",
+            "static": 1
+        },
+        "RenderUtils": {
+            "name": "RenderUtils",
+            "shortname": "RenderUtils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\util\\RenderUtils.js",
+            "line": 1,
+            "description": "Collection of methods used for generating THREE meshes from Guild Wars 2 data formats.",
+            "static": 1
+        },
+        "Logger": {
+            "name": "Logger",
+            "shortname": "Logger",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "T3D",
+            "file": "src\\Logger.js",
+            "line": 1,
+            "description": "A Logger class for T3D\n\nThis satic class defines severity levels of messages and provides\nbasic logging functionality. Replacing the reference to",
+            "static": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 40,
+            "description": "Parses the dat file main header and parses the MFT index",
+            "itemtype": "method",
+            "name": "parseHeaderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when mft indexing is complete. No arguments",
+                    "type": "Function"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 54,
+            "description": "Registers a pNaCl inflaton program from the DOM to this instance.",
+            "itemtype": "method",
+            "name": "connectInflater",
+            "params": [
+                {
+                    "name": "inflater",
+                    "description": "The embed element for the pNaCl program",
+                    "type": "HTMLElement"
+                },
+                {
+                    "name": "inflaterWrapper",
+                    "description": "The element wrapping the embed",
+                    "type": "HTMLElement"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 77,
+            "description": "Listener for pNaCl inflater.",
+            "itemtype": "method",
+            "name": "NaClListener",
+            "params": [
+                {
+                    "name": "message_event",
+                    "description": "data received from pNaCl program.",
+                    "type": "Object"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 110,
+            "description": "Reads the main header of this dat file and calls readMFTHeader\nin order to parse the MFT index.",
+            "itemtype": "method",
+            "name": "readANDatHeader",
+            "params": [
+                {
+                    "name": "ds",
+                    "description": "DataStream instance holding header data",
+                    "type": "DataStream"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 139,
+            "description": "Reads the MFT header and calls readMFTIndexFile\nin order to parse the MFT index.",
+            "itemtype": "method",
+            "name": "readMFTHeader",
+            "params": [
+                {
+                    "name": "ds",
+                    "description": "DataStream instance holding header data",
+                    "type": "DataStream"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 203,
+            "description": "Reads the main MFT index file and builds MFT indices used for acceccing\nfiles refered to by MFT index, File ID or Base ID.",
+            "itemtype": "method",
+            "name": "readMFTIndexFile",
+            "params": [
+                {
+                    "name": "ds",
+                    "description": "DataStream instance holding header data",
+                    "type": "DataStream"
+                },
+                {
+                    "name": "size",
+                    "description": "The size of the index file",
+                    "type": "Number"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 289,
+            "description": "Reads the cached list of files corresponding to the reader's .dat from the localStorage.",
+            "itemtype": "method",
+            "name": "loadFileList",
+            "return": {
+                "description": "Grouped List of files",
+                "type": "Array"
+            },
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 308,
+            "description": "Reads the cached list of maps corresponding to the reader's .dat from the localStorage.",
+            "itemtype": "method",
+            "name": "loadMapList",
+            "return": {
+                "description": "Grouped List of maps",
+                "type": "Array"
+            },
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 328,
+            "description": "Stores a files list array in the browser's local storage.",
+            "itemtype": "method",
+            "name": "storeFileList",
+            "params": [
+                {
+                    "name": "datFile",
+                    "description": "The File instance used to build the file list.",
+                    "type": "File"
+                },
+                {
+                    "name": "fileList",
+                    "description": "The list to store.",
+                    "type": "Object"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 342,
+            "description": "Stores a map list array in the browser's localStorage.",
+            "itemtype": "method",
+            "name": "storeMapList",
+            "params": [
+                {
+                    "name": "datFile",
+                    "description": "The File instance used to build the map list.",
+                    "type": "File"
+                },
+                {
+                    "name": "mapList",
+                    "description": "The list to store.",
+                    "type": "Object"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 354,
+            "description": "Reads the file type of each file in the dat and stores the resulting list in \nthe browser's local storage.",
+            "itemtype": "method",
+            "name": "readFileListAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fired when the list is generated and stores\n\nFirst argument is the a list of mft indices grouped by file type.",
+                    "type": "Function"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 402,
+            "description": "Looks up mft indices for all mapc pack files in the dat. Either looks trough all files or\nonly the list defined in {{#crossLink \"T3D/MapFileList:property\"}}{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "readMapListAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "searchAll",
+                    "description": "if true forces re-indexing of entire dat.\nIf false only reads indices specified in {{#crossLink \"T3D/MapFileList:property\"}}{{/crossLink}}.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fired when the list is generated\n\nFirst argument is the a list of mft indices grouped by file type. For exmample:\n\n\t\t{\t\n\t\t\tmaps:[\n\t\t\t\t{\n\t\t\t\t\tname: 'Heart of Maguuma',\n\t\t\t\t\tmaps: [\n\t\t\t\t\t\t{fileName:1151420, name:'HoT BWE3 Raid'},\n\t\t\t\t\t\t{fileName:969663, name:'Verdant Brink}\n\t\t\t\t\t]\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tname: 'Unknown maps',\n\t\t\t\t\tmaps: [\n\t\t\t\t\t\t{fileName:12345678, name:'Unknown map 12345678'}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t]\n\n\t    };",
+                    "type": "Function"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 555,
+            "description": "Lists all MFT indices grouped by file type. If a file type is specified only files of that type\nis added to the list.",
+            "itemtype": "method",
+            "name": "listFiles",
+            "params": [
+                {
+                    "name": "uniqueIdxs",
+                    "description": "File MFT indices to look in.",
+                    "type": "Array"
+                },
+                {
+                    "name": "type",
+                    "description": "Pack file type or file type to accept. If not set adds all files.",
+                    "type": "String"
+                },
+                {
+                    "name": "start",
+                    "description": "uniqueIdxs start ofset",
+                    "type": "[type]"
+                },
+                {
+                    "name": "length",
+                    "description": "number of entries to scan in uniqueIdxs",
+                    "type": "[type]"
+                },
+                {
+                    "name": "N",
+                    "description": "Number of parallel event listeners to run while scanning. (Kinda like parallelism but not quite)",
+                    "type": "[type]"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fired when all files have been indexed. First argument is a list of \nMFT indices grouped by file type, for example\n\t{\n\t  \t\"Unknown\"\t: [444, 555, 333],\n\t  \t\"MODL\"\t\t: [444, 555, 333],\n\t  \t\"String\"\t: [666, 777, 888]\n\t}",
+                    "type": "Function"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 720,
+            "description": "Gets MFT index by fileId or baseId",
+            "itemtype": "method",
+            "name": "getFileIndex",
+            "params": [
+                {
+                    "name": "baseOrFileId",
+                    "description": "A file Id or base Id",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "MFT index",
+                "type": "Number"
+            },
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 778,
+            "description": "Reads a bitmap from a texture file in the dat.",
+            "itemtype": "method",
+            "name": "loadTextureFile",
+            "async": 1,
+            "params": [
+                {
+                    "name": "baseId",
+                    "description": "Base or File id of the texture to load",
+                    "type": "Number"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fires when the inflater has read the texture data.\n\nThe passed arguments are \n-ArrayBuffer Bitmap\n-Number DXT Type\n-Number image width\n-Number image height",
+                    "type": "Function"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 796,
+            "description": "Reads data from a file in the dat.",
+            "itemtype": "method",
+            "name": "loadFile",
+            "async": 1,
+            "params": [
+                {
+                    "name": "baseId",
+                    "description": "Base or File id of the texture to load",
+                    "type": "Number"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fires when the inflater has read the data.\n\nThe passed arguments are \n-ArrayBuffer raw data\n-Number DXT Type if applicable\n-Number image width if applicable\n-Number image height if applicable",
+                    "type": "Function"
+                },
+                {
+                    "name": "isImage",
+                    "description": "",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "raw",
+                    "description": "If true, any infation is skipped and raw data is returned.",
+                    "type": "[type]"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 871,
+            "description": "Infaltes binary data using a pNaCl program. If the isImage flag is set the infalted data is\nalso decoded if it contains DXT image data.",
+            "itemtype": "method",
+            "name": "inflate",
+            "params": [
+                {
+                    "name": "ds",
+                    "description": "DataStream instance holding data to inflate",
+                    "type": "DataStream"
+                },
+                {
+                    "name": "size",
+                    "description": "Number if bytes to read",
+                    "type": "Number"
+                },
+                {
+                    "name": "{Number",
+                    "description": "handle    Unique ID for this file"
+                },
+                {
+                    "name": "callback",
+                    "description": "callback to register for this pNaCl task",
+                    "type": "Function"
+                },
+                {
+                    "name": "isImage",
+                    "description": "Passed to the inflater in order to decode image data",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "capLength",
+                    "description": "Number of bytes to deflate.",
+                    "type": "[type]"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\LocalReader\\LocalReader.js",
+            "line": 923,
+            "description": "Reads bytes from a big file. Uses offset and length (in bytes) in order to only load\nparts of the file that are used.",
+            "itemtype": "method",
+            "name": "loadFilePart",
+            "async": 1,
+            "params": [
+                {
+                    "name": "file",
+                    "description": "File object to read from",
+                    "type": "File"
+                },
+                {
+                    "name": "offset",
+                    "description": "Offset in bytes to start reading",
+                    "type": "[type]"
+                },
+                {
+                    "name": "length",
+                    "description": "Number of bytes to read",
+                    "type": "[type]"
+                },
+                {
+                    "name": "callback",
+                    "description": "Two arguments are passed. \n\nThe first is a DataStream object representation of the loaded data.\n\nThe second is the length of the data.",
+                    "type": "Function"
+                }
+            ],
+            "class": "LocalReader"
+        },
+        {
+            "file": "src\\dataRenderer\\DataRenderer.js",
+            "line": 55,
+            "description": "Gets the output value object for a specified class within the context.",
+            "itemtype": "method",
+            "name": "getOutput",
+            "params": [
+                {
+                    "name": "otherClass",
+                    "description": "The class to fetch the output value object for.\nIf not specified the class of this instance will be used.",
+                    "type": "Class"
+                }
+            ],
+            "return": {
+                "description": "The output value object for this class within the context.",
+                "type": "Object"
+            },
+            "class": "DataRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\DataRenderer.js",
+            "line": 66,
+            "description": "Basic rendering of unknown files. Output fileds generated:\n\n- *fileId* The fileId passed in the settings parameter when constructing this instance.\n\n- *rawData* An ArrayBuffer containg the infalted binary data of the loaded file.\n\n- *rawString* A string representation of the rawData\n\n- *image* A value object witht he fields 'width', 'height' and 'data' describing a RGBA bitmap\nimage. Only set if the loaded file was a texture.\n\n- *file* A GW2File representation of the loaded file. Only set if the loaded file was a Pack File.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "DataRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\EnvironmentRenderer.js",
+            "line": 266,
+            "description": "Output fileds generated:\n\n- *hazeColor* Array of RGBA values describing the global haze color of the map.\n- *lights* An array of THREE.DirectionalLight and  THREE.AmbientLight objects.\n- *hasLight* Boolean is false if no directional lights were added to \"lights\".\n- *skyElements* A textured THREE.Mesh skybox.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "EnvironmentRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 26,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "renderModels",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "[description]",
+                    "type": "Function"
+                }
+            ],
+            "async": 1,
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 45,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "getCollisionsForAnimation",
+            "params": [
+                {
+                    "name": "animation",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "collisions",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 65,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "parseAllModels description",
+            "params": [
+                {
+                    "name": "models",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "mat",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "title",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "chunkSize",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "offset",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "callback          [description]",
+                "type": "[type]"
+            },
+            "async": 1,
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 118,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "animationFromGeomIndex",
+            "params": [
+                {
+                    "name": "propGeomIndex",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "geometries",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "animations",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 135,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "renderMesh",
+            "params": [
+                {
+                    "name": "collision",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "model",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "mat",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 173,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "seedRandom",
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 183,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "parseHavokMesh",
+            "params": [
+                {
+                    "name": "collision",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "mat",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\HavokRenderer.js",
+            "line": 245,
+            "description": "Output fileds generated:\n\n- *boundingBox* Array of values describing the bounding box of all collision.\n- *meshes* An array of THREE.Mesh objects visualizing all collision in the map.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "HavokRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\ModelRenderer.js",
+            "line": 27,
+            "description": "Output fileds generated:\n\n- *meshes* An array of THREE.Mesh objects visualizing this model file.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "ModelRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\PropertiesRenderer.js",
+            "line": 26,
+            "description": "Renders all property meshes in a GW2 map described by the map's PROP chunk.\nOutput fileds generated:\n\n- *meshes* An array of THREE.Mesh objects visualizing all property models refered by this map.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "PropertiesRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\PropertiesRenderer.js",
+            "line": 238,
+            "description": "TODO: write description. Used for export feature",
+            "itemtype": "method",
+            "name": "getFileIdsAsync",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "[description]",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "PropertiesRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\StringRenderer.js",
+            "line": 26,
+            "description": "Output fileds generated:\n\n- *strings* An array of objects. Each object has a \"recid\"-property specifing on what index within the file\na given string was found, and a \"value\"-property specigying the string value.\n\n- *language* An integer specifing the language of the loaded file.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "StringRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\TerrainRenderer.js",
+            "line": 389,
+            "description": "Output fileds generated:\n\n- *terrainTiles* An array of THREE.Mesh objects visualizing terrain of the map.\n\n- *water* A THREE.Mesh object visualizing the bounds of the map.\n\n- *bounds* An object wiht x1, x2, y1, and y2 properties specifying the bounds of the map.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "TerrainRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\TerrainRenderer.js",
+            "line": 409,
+            "description": "TODO: write description. Used for export feature",
+            "itemtype": "method",
+            "name": "getFileIdsAsync",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "[description]",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "TerrainRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\ZoneRenderer.js",
+            "line": 21,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "renderZone",
+            "params": [
+                {
+                    "name": "zone",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "zoneDefs",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "mapRect",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "renderZoneCallback",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "ZoneRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\ZoneRenderer.js",
+            "line": 225,
+            "description": "TODO",
+            "itemtype": "method",
+            "name": "getModelGroups",
+            "params": [
+                {
+                    "name": "zone",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "zoneDef",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "mapRect",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "ZoneRenderer"
+        },
+        {
+            "file": "src\\dataRenderer\\ZoneRenderer.js",
+            "line": 401,
+            "description": "Renders all zone meshes in a GW2 map described by the map's \"zon2\" chunk.\nOutput fileds generated:\n\n- *meshes* An array of THREE.Mesh objects visualizing all zone models refered by this map.",
+            "itemtype": "method",
+            "name": "renderAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Fires when renderer is finished, does not take arguments.",
+                    "type": "Function"
+                }
+            ],
+            "class": "ZoneRenderer"
+        },
+        {
+            "file": "src\\format\\definition\\AllFormats.js",
+            "line": 3,
+            "description": "An auto-generated structure of arrays describing Chunk formats\nin the GW2 dat. The main contents of this file is generated\nusing the IDA script file 'ParseAnetStructsJS.idc'\nlocated in the IDA folder.",
+            "itemtype": "property",
+            "name": "Formats",
+            "type": "Array",
+            "class": "T3D"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 10,
+            "description": "Settings for resolving conflicting chunk names in different files.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "DUPLICATE_SETTINGS",
+            "type": "{Object}",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 77,
+            "itemtype": "property",
+            "name": "ds The DataStream data source used by this chunk.",
+            "type": "DataStream",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 82,
+            "itemtype": "property",
+            "name": "addr The address to this Chunk within ds.",
+            "type": "Number",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 87,
+            "itemtype": "property",
+            "name": "data The typed data read from the body of this chunk.",
+            "type": "Object",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 93,
+            "itemtype": "property",
+            "name": "headerLength The length in bytes of the chunk header.",
+            "type": "Number",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 98,
+            "itemtype": "property",
+            "name": "header Chunk header data.",
+            "type": "Object",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 104,
+            "description": "Parses the chunk header data, populating the header property.",
+            "itemtype": "method",
+            "name": "loadHead",
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 115,
+            "itemtype": "method",
+            "name": "getDefinition",
+            "params": [
+                {
+                    "name": "fileType",
+                    "description": "The main type of the pack file containing this chunk.\nUsed for resolving chunk naming conflicts between pack file types.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "DataStream formatted array describing the data\nsctructures of this chunk",
+                "type": "Array"
+            },
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 180,
+            "description": "Parses the chunk main data, populating the data property.",
+            "itemtype": "method",
+            "name": "loadData",
+            "params": [
+                {
+                    "name": "fileType",
+                    "description": "The main type of the pack file containing this chunk.\nUsed for resolving chunk naming conflicts between pack file types when\nlooking up the structure definition for this chunk.",
+                    "type": "String"
+                }
+            ],
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2Chunk.js",
+            "line": 206,
+            "description": "Retrieves the next chunk is the datastream. In practice this means the next chunk\nwithin the same pack file.",
+            "itemtype": "method",
+            "name": "next",
+            "return": {
+                "description": "The next chunk if any, otherwise null.",
+                "type": "GW2Chunk"
+            },
+            "class": "GW2Chunk"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 23,
+            "itemtype": "property",
+            "name": "ds The DataStream data source used by this file.",
+            "type": "DataStream",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 28,
+            "itemtype": "property",
+            "name": "addr The address to this File within ds.",
+            "type": "Number",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 36,
+            "itemtype": "property",
+            "name": "headerLength The length in bytes of the file header.",
+            "type": "Number",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 41,
+            "description": "All {{#crossLink \"GW2Chunk\"}}chunks{{/crossLink}} contained in the file.",
+            "itemtype": "property",
+            "name": "chunks",
+            "type": "GW2Chunk[]",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 50,
+            "itemtype": "property",
+            "name": "header Chunk header data.",
+            "type": "Object",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 61,
+            "description": "Parses the file header data, populating the header property.",
+            "itemtype": "method",
+            "name": "readHead",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 71,
+            "description": "Parses the file headers and populates the chunks property.",
+            "itemtype": "method",
+            "name": "readChunks",
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 99,
+            "description": "Get a GW2Chunk from this file",
+            "itemtype": "method",
+            "name": "getChunk",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The name, or type of the desired chunk.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The first GW2Chunk in this file matching the type name, or null if no matching GW2Chunk was found.",
+                "type": "GW2Chunk"
+            },
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\format\\file\\GW2File.js",
+            "line": 113,
+            "description": "Provides a list of known header types and their parsing structure. Should be defined by each file type individually.",
+            "itemtype": "method",
+            "name": "getChunkStructs",
+            "return": {
+                "description": "An object mapping chunk identifiers to DataStream structure descriptors.",
+                "type": "Object"
+            },
+            "class": "GW2File"
+        },
+        {
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 17,
+            "description": "Builds a custom vertex shader for a given number of uv cannels.\nWIP not implemented yet!",
+            "itemtype": "method",
+            "name": "buildVS",
+            "params": [
+                {
+                    "name": "numUv",
+                    "description": "Number of UV channels used by this shader",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Genereted vertex shader source",
+                "type": "String"
+            },
+            "class": "MaterialUtils"
+        },
+        {
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 50,
+            "description": "Builds a custom pixel shader for a given number of uv cannels.\nWIP not implemented yet!",
+            "itemtype": "method",
+            "name": "buildPS",
+            "params": [
+                {
+                    "name": "textures",
+                    "description": "THREE textures",
+                    "type": "Array"
+                },
+                {
+                    "name": "numUv",
+                    "description": "Number of UV channels used by this shader",
+                    "type": "Number"
+                },
+                {
+                    "name": "alphaTest",
+                    "description": "Texture see-trough alpha treshold",
+                    "type": "Number"
+                },
+                {
+                    "name": "lightMap",
+                    "description": "TODO",
+                    "type": "TODO"
+                }
+            ],
+            "class": "MaterialUtils"
+        },
+        {
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 108,
+            "description": "WIP, concept for generatin materials to render multi UV chanelled meshes.",
+            "itemtype": "method",
+            "name": "getUVMat",
+            "params": [
+                {
+                    "name": "textures",
+                    "description": "THREE texture",
+                    "type": "Array"
+                },
+                {
+                    "name": "numUV",
+                    "description": "Number of UV channels used by this shader",
+                    "type": "Number"
+                },
+                {
+                    "name": "alphaTest",
+                    "description": "Texture see-trough alpha treshold",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Generated shader",
+                "type": "THREE.ShaderMaterial"
+            },
+            "class": "MaterialUtils"
+        },
+        {
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 153,
+            "description": "Builds a THREE texture from a ModelMaterialData by reading settings and\nloading any required data from the localReader. Uses sharedTextures for \ntexture caching.\n\nThis method is full of guesses and estimations, and could be improved on\na lot, allowing rendering of multi UV channeled materials, or special\nmaterials like custom color chanelled gear.",
+            "itemtype": "method",
+            "name": "getMaterial",
+            "params": [
+                {
+                    "name": "material",
+                    "description": "A value object often automaticaly  \n                                      \tgenerated by a\n                                      \t{{#crossLink \"GW2Chunk\"}}{{/crossLink}}\n                                      \tstructure definitions can be found in \n                                      \tAllFormats.js, look for the latest \n                                      \tversion of ModelMaterialData",
+                    "type": "ModelMaterialData"
+                },
+                {
+                    "name": "materialFile",
+                    "description": "A GW2File instance, must be of type AMAT",
+                    "type": "GW2File"
+                },
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader to load the file contents from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "sharedTextures",
+                    "description": "Value Object for keeping the texture cache",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "A THREE Material with the generated contents and settings.",
+                "type": "THREE.Material"
+            },
+            "class": "MaterialUtils"
+        },
+        {
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 461,
+            "description": "Load image data into a THREE.Texture from a texture file in the .dat file, using a LocalReader.\nAny loaded tetures are added to sharedTextures, allowing for texture caching and fewer reads.",
+            "itemtype": "method",
+            "name": "getTexture",
+            "params": [
+                {
+                    "name": "texURL",
+                    "description": "The fileId or baseId of the file to load image data from.",
+                    "type": "Number"
+                },
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader to load the file contents from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "sharedTextures",
+                    "description": "Value Object for keeping the texture cache",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "A texture that will be populated by the file data when it is loaded.",
+                "type": "THREE.Texture"
+            },
+            "class": "MaterialUtils"
+        },
+        {
+            "file": "src\\util\\MaterialUtils.js",
+            "line": 501,
+            "description": "Load image data into a THREE.Texture from a texture file in the .dat file, using a LocalReader.\nIf you're loading multiple textures, make sure to use\n{{#crossLink \"MaterialUtils/getTexture\"}}{{/crossLink}} that allows you to cache textures.",
+            "itemtype": "method",
+            "name": "loadLocalTexture",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "- The LocalReader to load the file contents from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "fileId",
+                    "description": "- The fileId or baseId of the file to load image data from.",
+                    "type": "Number"
+                },
+                {
+                    "name": "mapping",
+                    "description": "- What THREE mapping the returned texture will use, not implemented.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A texture that will be populated by the file data when it is loaded.",
+                "type": "THREE.Texture"
+            },
+            "class": "MaterialUtils"
+        },
+        {
+            "file": "src\\util\\MathUtils.js",
+            "line": 8,
+            "description": "Takes an integer and calculates what the 16 bit float\nrepresentation of the binary data used to read the integer is.",
+            "itemtype": "method",
+            "name": "f16",
+            "params": [
+                {
+                    "name": "h",
+                    "description": "Integer value",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Float value",
+                "type": "Number"
+            },
+            "class": "MathUtils"
+        },
+        {
+            "file": "src\\util\\MathUtils.js",
+            "line": 30,
+            "description": "Calculates the number of binary ones present in the data used to\ngenerate the input integer.",
+            "itemtype": "method",
+            "name": "popcount",
+            "params": [
+                {
+                    "name": "bits",
+                    "description": "Integer",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Number of binary ones in the data",
+                "type": "Number"
+            },
+            "class": "MathUtils"
+        },
+        {
+            "file": "src\\util\\MathUtils.js",
+            "line": 52,
+            "description": "Calculates the 64 bit integer value of two 32 bit integers. Only works up to \nthe limit of the javascript Number maximum value.",
+            "itemtype": "method",
+            "name": "arr32To64",
+            "params": [
+                {
+                    "name": "arr",
+                    "description": "Input integers, length should be 2.",
+                    "type": "Number[]"
+                }
+            ],
+            "return": {
+                "description": "64 bit representation of the two integers.",
+                "type": "Number"
+            },
+            "class": "MathUtils"
+        },
+        {
+            "file": "src\\util\\MathUtils.js",
+            "line": 67,
+            "description": "Sorts an array and returns unique values only.",
+            "itemtype": "method",
+            "name": "sort_unique",
+            "params": [
+                {
+                    "name": "arr_in",
+                    "description": "Input array",
+                    "type": "Array"
+                },
+                {
+                    "name": "comparator",
+                    "description": "A comparator function between the objects in arr_in",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "Sorted and unique value.",
+                "type": "Array"
+            },
+            "class": "MathUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 13,
+            "description": "Generates a function for reading an array using DataStream",
+            "itemtype": "method",
+            "name": "getArrayReader",
+            "params": [
+                {
+                    "name": "structDef",
+                    "description": "DataStream formatted structure definition\n                          for the items in the array.",
+                    "type": "Array"
+                },
+                {
+                    "name": "maxCount",
+                    "description": "The maximum allowed length of the array.\n                          Allows any length if left unspecified.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 54,
+            "description": "Generates a function for reading a refered array using DataStream",
+            "itemtype": "method",
+            "name": "getRefArrayReader",
+            "params": [
+                {
+                    "name": "structDef",
+                    "description": "DataStream formatted structure definition\n                          for the items in the array.",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 121,
+            "description": "Generates a function for reading a 64bit initeger. For now just reads each\n32 bit integer and glues together as a string.",
+            "itemtype": "method",
+            "name": "getQWordReader",
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 139,
+            "description": "Generates a function for reading a string of 8 bit chars.",
+            "itemtype": "method",
+            "name": "getStringReader",
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 161,
+            "description": "Generates a function for reading a string of 16 bit chars.",
+            "itemtype": "method",
+            "name": "getString16Reader",
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 189,
+            "description": "Generates a function for reading a pointer.",
+            "itemtype": "method",
+            "name": "getPointerReader",
+            "params": [
+                {
+                    "name": "structDef",
+                    "description": "DataStream formatted structure definition\n                          for the item pointed to.",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\ParserUtils.js",
+            "line": 220,
+            "description": "Generates a function for reading a filename/file Id.",
+            "itemtype": "method",
+            "name": "getFileNameReader",
+            "return": {
+                "description": "The generated parsing function.",
+                "type": "Function"
+            },
+            "class": "ParserUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 15,
+            "description": "Object describing the meaning of the bits in fvf integers.",
+            "itemtype": "property",
+            "name": "fvfFormat",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 42,
+            "description": "Creates a mesh representing a single plane.",
+            "itemtype": "method",
+            "name": "renderRect",
+            "params": [
+                {
+                    "name": "rect",
+                    "description": "An object with x1,x2,y1 and y2 properties.",
+                    "type": "Object"
+                },
+                {
+                    "name": "yPos",
+                    "description": "Vertical position of the rectangle.",
+                    "type": "Number"
+                },
+                {
+                    "name": "material",
+                    "description": "Mesh material to apply.",
+                    "type": "THREE.Material"
+                },
+                {
+                    "name": "dy",
+                    "description": "Mesh height.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The generated mesh.",
+                "type": "THREE.Mesh"
+            },
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 82,
+            "description": "Load image data into a THREE.Texture from a file within the GW2 .dat file using a LocalReader.",
+            "itemtype": "method",
+            "name": "loadLocalTexture",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader to load the file contents from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "fileId",
+                    "description": "The fileId or baseId of the file to load image data from.",
+                    "type": "Number"
+                },
+                {
+                    "name": "mapping",
+                    "description": "What THREE mapping the returned texture will use, not implemented.",
+                    "type": "Number"
+                },
+                {
+                    "name": "defaultColor",
+                    "description": "RGBA array of 4 integers. The default solid color of the mesh, should texture loading fail.",
+                    "type": "Array"
+                },
+                {
+                    "name": "onerror",
+                    "description": "Error callback, not implemented.",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "A texture that will be populated by the file data when it is loaded.",
+                "type": "THREE.Texture"
+            },
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 99,
+            "description": "Returns a THREE representation of the data contained by a GW2 model file.\nThe data is read using a LocalReader reference into the GW2 .dat.",
+            "itemtype": "method",
+            "name": "renderGeomChunk",
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader to load the file contents from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "chunk",
+                    "description": "Model GEOM chunk.",
+                    "type": "Object"
+                },
+                {
+                    "name": "modelDataChunk",
+                    "description": "Model MODL chunk.",
+                    "type": "Object"
+                },
+                {
+                    "name": "sharedTextures",
+                    "description": "Value Object for keeping the texture cache.",
+                    "type": "Object"
+                },
+                {
+                    "name": "showUnmaterialed",
+                    "description": "If false does not render any models with missing materials.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Each geometry in the model file represented by a textured THREE.Mesh object",
+                "type": "Array"
+            },
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 384,
+            "description": "Loads mesh array from Model file and sends as argument to callback.",
+            "itemtype": "method",
+            "name": "loadMeshFromModelFile",
+            "params": [
+                {
+                    "name": "filename",
+                    "description": "Name of the model file to load data from.",
+                    "type": "Number"
+                },
+                {
+                    "name": "solidColor",
+                    "description": "RGBA array of 4 integers",
+                    "type": "Array"
+                },
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader to load the file contents from.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "sharedTextures",
+                    "description": "Value Object for keeping the texture cache.",
+                    "type": "Object"
+                },
+                {
+                    "name": "showUnmaterialed",
+                    "description": "If false does not render any models with missing materials.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fired once all meshes have been loaded.\ntwo arguments are passed to the callback function.\n\nThe first argument is an Array with each textured THREE.Mesh objects.\n\nThe second argument is the bounding spehere of this model file.",
+                    "type": "Function"
+                }
+            ],
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 583,
+            "description": "Gets a mesh array from Model file and sends as argument to callback. Uses a cache of meshes in order\nto never read the same model file twice.",
+            "itemtype": "method",
+            "name": "getMeshesForFilename",
+            "params": [
+                {
+                    "name": "filename",
+                    "description": "The fileId or baseId of the Model file to load",
+                    "type": "Number"
+                },
+                {
+                    "name": "color",
+                    "description": "RGBA array of 4 integers",
+                    "type": "Array"
+                },
+                {
+                    "name": "localReader",
+                    "description": "The LocalReader object used to read data from the GW2 .dat file.",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "sharedMeshes",
+                    "description": "Value Object for keeping the texture cache.",
+                    "type": "Object"
+                },
+                {
+                    "name": "sharedTextures",
+                    "description": "Value Object for keeping the texture cache.",
+                    "type": "Object"
+                },
+                {
+                    "name": "showUnmaterialed",
+                    "description": "If false does not render any models with missing materials.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fired once all meshes have been loaded.\nthree arguments are passed to the callback function.\n\nThe first argument is an Array with each textured THREE.Mesh objects.\n\nThe second argument is a boolean, true indicates that these meshes were not\nloaded from the dat file, but retrieved from the run time cache.\n\nThe third argument is the bounding spehere of this model file.",
+                    "type": "Function"
+                }
+            ],
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\util\\RenderUtils.js",
+            "line": 636,
+            "description": "WIP, Tries to find all fileIds refered by a model file.",
+            "itemtype": "method",
+            "name": "getFilesUsedByModel",
+            "params": [
+                {
+                    "name": "filename",
+                    "description": "Model file Id",
+                    "type": "Number"
+                },
+                {
+                    "name": "localReader",
+                    "description": "LocalReader instance to read from",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "callback",
+                    "description": "First argument is list of used file IDs",
+                    "type": "Function"
+                }
+            ],
+            "class": "RenderUtils"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 11,
+            "itemtype": "property",
+            "name": "TYPE_ERROR",
+            "type": "[Number]",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 16,
+            "itemtype": "property",
+            "name": "TYPE_WARNING",
+            "type": "[Number]",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 21,
+            "itemtype": "property",
+            "name": "TYPE_MESSAGE",
+            "type": "[Number]",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 26,
+            "itemtype": "property",
+            "name": "TYPE_PROGRESS",
+            "type": "[Number]",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 31,
+            "itemtype": "property",
+            "name": "TYPE_DEBUG",
+            "type": "[Number]",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 38,
+            "description": "The logging functions, indexed by severity/type.",
+            "itemtype": "property",
+            "name": "logFunctions",
+            "type": "Function[]",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\Logger.js",
+            "line": 46,
+            "description": "Main logging method. Takes 1 to N arguments. If there are more than 1 arguments\nthe first argument is interpreted as severity. If there is only one argument\nseverity defaults to\n{{#crossLink \"Logger/TYPE_MESSAGE:property\"}}{{/crossLink}}.\n \nThe following arguments are passed to a logging function matching the\nseverity.",
+            "itemtype": "method",
+            "name": "log",
+            "class": "Logger"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 32,
+            "description": "The current library version. Used to make sure local storage caches are not\nshared between different releases.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "version",
+            "type": "String",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 45,
+            "description": "A static reference to the GW2File class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "GW2File",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 55,
+            "description": "A static reference to the GW2Chunk class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "GW2Chunk",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 68,
+            "description": "A static reference to the DataRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "DataRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 78,
+            "description": "A static reference to the EnvironmentRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "EnvironmentRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 88,
+            "description": "A static reference to the HavokRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "HavokRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 98,
+            "description": "A static reference to the PropertiesRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "PropertiesRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 108,
+            "description": "A static reference to the ModelRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "ModelRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 118,
+            "description": "A static reference to the TerrainRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "TerrainRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 128,
+            "description": "A static reference to the ZoneRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "ZoneRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 138,
+            "description": "A static reference to the StringRenderer class, the preferred way of\naccessing this class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "StringRenderer",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 153,
+            "description": "A static reference to the static Logger class, the preferred way of\naccessing this class. A simple way of providing your own logging methods\nis to simply overwrite any or all of the logging methods specified in \n{{#crossLink \"Logger/logFunctions:property\"}}{{/crossLink}}",
+            "itemtype": "property",
+            "name": "Logger",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 167,
+            "description": "Contains a list of known map fileID:s and their names. Used in order to quickly\nlook up what maps are in a .dat file. Note that this property is hard coded and\nhas high probablity of being outdated. Also note that the names are just guesses\nby RequestTimeout.\n\nThe format of this list objects is\n\n\n\t{ \n \tmaps : [\n\t  \t\t{\n    \t\t\tname:\"World Area Name\",\n\t       \t\tmaps:[\n\t         \t\t{ fileName :\"[numeric fileId].data\", name:\"Map Name One\" },\n\t           \t\t{ fileName :\"[numeric fileId].data\", name:\"Map Name Two\" },\t\t\n\t             \t{ fileName :\"[numeric fileId].data\", name:\"Map Name Three\" }\n\t              ]\n          },\n\t         {\n\t\t\t    name:\"Another World Area Name\",\n\t\t \t   \tmaps:[\n\t\t \t\t   \t{ fileName :\"[numeric fileId].data\", name:\"Map Name 408\" }\n\t\t\t    ]\n\t\t     }\n\t\t]\n  }",
+            "final": 1,
+            "itemtype": "property",
+            "name": "MapFileList",
+            "type": "Object",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 203,
+            "description": "A static reference to the MaterialUtils class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "MaterialUtils",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 212,
+            "description": "A static reference to the MathUtils class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "MathUtils",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 221,
+            "description": "A static reference to the ParserUtils class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "ParserUtils",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 231,
+            "description": "A static reference to the RenderUtils class.",
+            "final": 1,
+            "itemtype": "property",
+            "name": "RenderUtils",
+            "type": "Class",
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 243,
+            "description": "Performs checks for required browser capabilities and required third party libraries.\nLoggs any warnings or error messages.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "checkRequirements",
+            "return": {
+                "description": "The ammount of errors and warnings generated.",
+                "type": "Number"
+            },
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 288,
+            "description": "Performs a quick and dirty check to find what chunk name definitions \nappear multiple times in th formats array. Note that anything that\nappears more than 2 times wil get a too hight value due to the \nalgorithm being... incorrect.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "findDuplicateChunkDefs",
+            "return": {
+                "description": "An object mapping duplicate chunk definition names.\nto the number of apperances.",
+                "type": "Object"
+            },
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 325,
+            "description": "Creates a new instance of LocalReader with an pNaCl inflater connected to it.",
+            "itemtype": "method",
+            "name": "getLocalReader",
+            "async": 1,
+            "params": [
+                {
+                    "name": "file",
+                    "description": "Core JS File instance, must refer to a GW2 .dat file",
+                    "type": "File"
+                },
+                {
+                    "name": "callback",
+                    "description": "Callback function, fired when the file index is fully\n                            \t\tconstructed. Takes no arguments.",
+                    "type": "Function"
+                },
+                {
+                    "name": "inflaterURL",
+                    "description": "URL to the inflater .mft file. If omitted\n                              \t_settings.inflaterURL will be used instead.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The contructed LocalReader, note that this object\n                            \t\twill not be fully initialized until the callback\n                            \t\tis fired.",
+                "type": "LocalReader"
+            },
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 376,
+            "description": "Utility method for acceccing a list containing information about all files\nin the .dat connected to the provided LocalReader instance. This method first\ntries to read a local indexing list from the client's localstorage and\nfallbacks to generating the list by scanning the MFT indices of the .dat\nand peeking each file in order to find out what filetype it has.\n\nNote that peeking the files is the time consuming task, so if you don't want\nyout application to spend time indexing the .dat and have a priori knowledge\nabout the required file Id's you should not use this method.",
+            "itemtype": "method",
+            "name": "getFileListAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "A fully initialized LocalReader instance",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fires when the index has been loaded\n                                \t\tfrom the localstorage or after it has\n                                \t\tbeen built and stored in localstorage.\n                                \t\tTakes the generated object list of\n                                \t\tfiles as an argument. This list groups\n                                \t\tarrays of MFT indices per file type,\n                                \t\tfor exmample:\n\n\n\t{\n\t  \t\"Unknown\"\t: [444, 555, 333],\n\t  \t\"MODL\"\t\t: [444, 555, 333],\n\t  \t\"String\"\t: [666, 777, 888]\n\t}\n\nFor more details see\n{{#crossLink \"LocalReader/listFiles:method\"}}{{/crossLink}}",
+                    "type": "Function"
+                }
+            ],
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 425,
+            "description": "Utility method for acceccing a list containing information about all map files\nin the .dat connected to the provided LocalReader instance. This method first\ntries to read a local indexing list from the client's localstorage and\nfallbacks to generating the list by scanning the MFT indices of the .dat\nand peeking each file in order to find out what filetype it has.\n\nIf the searchAll flag is not set to true, this process will only scan files\nfrom the {{#crossLink \"T3D/MapFileList:property\"}}{{/crossLink}}",
+            "itemtype": "method",
+            "name": "getMapListAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "A fully initialized LocalReader instance",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "callback",
+                    "description": "Fires when the index has been loaded\n                                \tfrom the localstorage or after it has\n                                \tbeen built and stored in localstorage.\n                                \tTakes the generated object list of\n                                \tfiles as an argument. This list groups\n                                \tarrays of MFT indices per file type,\n                                \tfor exmample:\n\n\t\t{\t\n\t\t\tmaps:[\n\t\t\t\t{\n\t\t\t\t\tname: 'Heart of Maguuma',\n\t\t\t\t\tmaps: [\n\t\t\t\t\t\t{fileName:1151420, name:'HoT BWE3 Raid'},\n\t\t\t\t\t\t{fileName:969663, name:'Verdant Brink}\n\t\t\t\t\t]\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tname: 'Unknown maps',\n\t\t\t\t\tmaps: [\n\t\t\t\t\t\t{fileName:12345678, name:'Unknown map 12345678'}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t]\n\n\t    };",
+                    "type": "Function"
+                },
+                {
+                    "name": "searchAll",
+                    "description": "if true forces re-indexing of entire dat.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 489,
+            "description": "Utility method used for rendering map files. Loads a map file and applies\nthe provided renderers to it.",
+            "itemtype": "method",
+            "name": "renderMapContentsAsync",
+            "async": 1,
+            "params": [
+                {
+                    "name": "localReader",
+                    "description": "A fully initialized LocalReader instance",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "fileName",
+                    "description": "The File Id of a mapc file.",
+                    "type": "Number"
+                },
+                {
+                    "name": "renderers",
+                    "description": "An array of renderer classes. Each\n                              \t\tclass should extend \n                              \t\t{{#crossLink \"DataRenderer\"}}{{/crossLink}}",
+                    "type": "Array"
+                },
+                {
+                    "name": "callback",
+                    "description": "Callback function, takes the shared\n                                \t\trenderer context as an argument.",
+                    "type": "Function"
+                },
+                {
+                    "name": "logger",
+                    "description": "A logger class of the same type as\n                              \t\t{{#crossLink \"Logger\"}}{{/crossLink}}",
+                    "type": "Class"
+                }
+            ],
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 560,
+            "description": "Utility method for applying a single renderer to a LocalReader insatnce.",
+            "itemtype": "method",
+            "name": "runRenderer",
+            "async": 1,
+            "params": [
+                {
+                    "name": "renderClass",
+                    "description": "A class extending \n                               \t{{#crossLink \"DataRenderer\"}}{{/crossLink}}",
+                    "type": "Class"
+                },
+                {
+                    "name": "localReader",
+                    "description": "A fully initialized LocalReader instance",
+                    "type": "LocalReader"
+                },
+                {
+                    "name": "settings",
+                    "description": "Settings passed to the renderer. Often\n                              \tspecifies thinks like what file ID should\n                              \tbe loaded.",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "The shared renderer context value object.",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "Callback method passed to the renderAsync\n                                \tmethod of the renderer.",
+                    "type": "Function"
+                }
+            ],
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 587,
+            "itemtype": "method",
+            "name": "getContextValue",
+            "params": [
+                {
+                    "name": "context",
+                    "description": "A shared renderer context value object.",
+                    "type": "Object"
+                },
+                {
+                    "name": "clazz",
+                    "description": "A class extending\n                               \t{{#crossLink \"DataRenderer\"}}{{/crossLink}}.\n                               \tSpecifies for renderer class you want to read \n                               \toutput.",
+                    "type": "Class"
+                },
+                {
+                    "name": "propName",
+                    "description": "The name of the property written by the\n                               \trenderer that should retrtieved.",
+                    "type": "String"
+                },
+                {
+                    "name": "defaultValue",
+                    "description": "This value is passed back if no data could\n                             \tbe found.",
+                    "type": "Any"
+                }
+            ],
+            "return": {
+                "description": "The specified value from the conext if any,\n                         \t\totherwise defaultValue.",
+                "type": "Any"
+            },
+            "class": "T3D",
+            "module": "T3D"
+        },
+        {
+            "file": "src\\T3DLib.js",
+            "line": 609,
+            "description": "Check if the client web browser can render WebGL 3D content.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "hasWebGL",
+            "params": [
+                {
+                    "name": "return_context",
+                    "description": "flag making this method return the canvas object instead of true",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "true if the client is WebGL enabled, false otherwise",
+                "type": "Boolean"
+            },
+            "class": "T3D",
+            "module": "T3D"
+        }
+    ],
+    "warnings": []
+}

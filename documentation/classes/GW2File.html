@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GW2File - Tyria 3D Library</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="Tyria 3D Library" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/DataRenderer.html">DataRenderer</a></li>
+                                <li><a href="../classes/EnvironmentRenderer.html">EnvironmentRenderer</a></li>
+                                <li><a href="../classes/GW2Chunk.html">GW2Chunk</a></li>
+                                <li><a href="../classes/GW2File.html">GW2File</a></li>
+                                <li><a href="../classes/HavokRenderer.html">HavokRenderer</a></li>
+                                <li><a href="../classes/LocalReader.html">LocalReader</a></li>
+                                <li><a href="../classes/Logger.html">Logger</a></li>
+                                <li><a href="../classes/MaterialUtils.html">MaterialUtils</a></li>
+                                <li><a href="../classes/MathUtils.html">MathUtils</a></li>
+                                <li><a href="../classes/ModelRenderer.html">ModelRenderer</a></li>
+                                <li><a href="../classes/ParserUtils.html">ParserUtils</a></li>
+                                <li><a href="../classes/PropertiesRenderer.html">PropertiesRenderer</a></li>
+                                <li><a href="../classes/RenderUtils.html">RenderUtils</a></li>
+                                <li><a href="../classes/StringRenderer.html">StringRenderer</a></li>
+                                <li><a href="../classes/T3D.html">T3D</a></li>
+                                <li><a href="../classes/TerrainRenderer.html">TerrainRenderer</a></li>
+                                <li><a href="../classes/ZoneRenderer.html">ZoneRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/T3D.html">T3D</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>GW2File Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_format_file_GW2File.js.html#l12"><code>src\format\file\GW2File.js:12</code></a>
+        </div>
+
+            Module: <a href="../modules/T3D.html">T3D</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>Basic header and chunk parsing functionality for Guild Wars 2 pack files (PF)</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_GW2File" class="method item">
+    <h3 class="name"><code>GW2File</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>ds</code>
+                </li>
+                <li class="arg">
+                        <code>addr</code>
+                </li>
+                <li class="arg">
+                        <code>noChunks</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l12"><code>src\format\file\GW2File.js:12</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">ds</code>
+                        <span class="type">DataStream</span>
+
+
+                    <div class="param-description">
+                        <p>A DataStream containing deflated file binary data.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">addr</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Offset of file start within the DataStream</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">noChunks</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>If true, the file does not parse its
+chunks on creation.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_getChunk">getChunk</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getChunkStructs">getChunkStructs</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readChunks">readChunks</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readHead">readHead</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_addr The address to this File within ds.">addr The address to this File within ds.</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_chunks">chunks</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_ds The DataStream data source used by this file.">ds The DataStream data source used by this file.</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_header Chunk header data.">header Chunk header data.</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_headerLength The length in bytes of the file header.">headerLength The length in bytes of the file header.</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_getChunk" class="method item">
+    <h3 class="name"><code>getChunk</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>type</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/GW2Chunk.html" class="crosslink">GW2Chunk</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l99"><code>src\format\file\GW2File.js:99</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Get a GW2Chunk from this file</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">type</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The name, or type of the desired chunk.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/GW2Chunk.html" class="crosslink">GW2Chunk</a></span>:
+                    <p>The first GW2Chunk in this file matching the type name, or null if no matching GW2Chunk was found.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getChunkStructs" class="method item">
+    <h3 class="name"><code>getChunkStructs</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l113"><code>src\format\file\GW2File.js:113</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Provides a list of known header types and their parsing structure. Should be defined by each file type individually.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>An object mapping chunk identifiers to DataStream structure descriptors.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_readChunks" class="method item">
+    <h3 class="name"><code>readChunks</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l71"><code>src\format\file\GW2File.js:71</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Parses the file headers and populates the chunks property.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_readHead" class="method item">
+    <h3 class="name"><code>readHead</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l61"><code>src\format\file\GW2File.js:61</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Parses the file header data, populating the header property.</p>
+
+    </div>
+
+
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+<div id="property_addr The address to this File within ds." class="property item">
+    <h3 class="name"><code>addr The address to this File within ds.</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l28"><code>src\format\file\GW2File.js:28</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_chunks" class="property item">
+    <h3 class="name"><code>chunks</code></h3>
+    <span class="type"><a href="../classes/GW2Chunk.html" class="crosslink">GW2Chunk[]</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l41"><code>src\format\file\GW2File.js:41</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>All <a href="../classes/GW2Chunk.html" class="crosslink">chunks</a> contained in the file.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_ds The DataStream data source used by this file." class="property item">
+    <h3 class="name"><code>ds The DataStream data source used by this file.</code></h3>
+    <span class="type">DataStream</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l23"><code>src\format\file\GW2File.js:23</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_header Chunk header data." class="property item">
+    <h3 class="name"><code>header Chunk header data.</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l50"><code>src\format\file\GW2File.js:50</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_headerLength The length in bytes of the file header." class="property item">
+    <h3 class="name"><code>headerLength The length in bytes of the file header.</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_format_file_GW2File.js.html#l36"><code>src\format\file\GW2File.js:36</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

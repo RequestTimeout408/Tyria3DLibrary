@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\T3DLib.js - Tyria 3D Library</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="Tyria 3D Library" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/DataRenderer.html">DataRenderer</a></li>
+                                <li><a href="../classes/EnvironmentRenderer.html">EnvironmentRenderer</a></li>
+                                <li><a href="../classes/GW2Chunk.html">GW2Chunk</a></li>
+                                <li><a href="../classes/GW2File.html">GW2File</a></li>
+                                <li><a href="../classes/HavokRenderer.html">HavokRenderer</a></li>
+                                <li><a href="../classes/LocalReader.html">LocalReader</a></li>
+                                <li><a href="../classes/Logger.html">Logger</a></li>
+                                <li><a href="../classes/MaterialUtils.html">MaterialUtils</a></li>
+                                <li><a href="../classes/MathUtils.html">MathUtils</a></li>
+                                <li><a href="../classes/ModelRenderer.html">ModelRenderer</a></li>
+                                <li><a href="../classes/ParserUtils.html">ParserUtils</a></li>
+                                <li><a href="../classes/PropertiesRenderer.html">PropertiesRenderer</a></li>
+                                <li><a href="../classes/RenderUtils.html">RenderUtils</a></li>
+                                <li><a href="../classes/StringRenderer.html">StringRenderer</a></li>
+                                <li><a href="../classes/T3D.html">T3D</a></li>
+                                <li><a href="../classes/TerrainRenderer.html">TerrainRenderer</a></li>
+                                <li><a href="../classes/ZoneRenderer.html">ZoneRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/T3D.html">T3D</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src\T3DLib.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * Provides the static Tyria 3D Library Class.
+ * @module T3D
+ */
+
+/* INCLUDES */
+LocalReader = require(&#x27;./LocalReader/LocalReader.js&#x27;);
+
+/**
+ * Tyria 3D Library main class.
+ * 
+ * Use this static class to access file parsers- and data renderer classes.
+ * 
+ * This class also works as a factory for creating
+ * LocalReader instances that looks up and inflates files from the Guild Wars 2 .dat.
+ *
+ * @main T3D
+ * @class T3D
+ * @static 
+ */
+module.exports = T3D;
+function T3D() {}
+
+/* PRIVATE VARS */
+var _version = &quot;1.0.3&quot;;
+var _settings = {
+    inflaterURL : &quot;modules/nacl/t3dgwtools.nmf&quot;
+};
+
+/* PUBLIC PROPERTIES */
+
+/**
+ * The current library version. Used to make sure local storage caches are not
+ * shared between different releases.
+ *
+ * @final
+ * @property version
+ * @type String
+ */
+T3D.version = _version;
+
+
+/* FILES */
+
+/**
+ * A static reference to the GW2File class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property GW2File
+ * @type Class
+ */
+T3D.GW2File =                require(&quot;./format/file/GW2File&quot;);
+
+/**
+ * A static reference to the GW2Chunk class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property GW2Chunk
+ * @type Class
+ */
+T3D.GW2Chunk =                 require(&quot;./format/file/GW2Chunk&quot;);
+
+
+/* RENDERERS */
+
+/**
+ * A static reference to the DataRenderer class, the preferred way of
+ * accessing this class.
+ * 
+ * @final
+ * @property DataRenderer
+ * @type Class
+ */
+T3D.DataRenderer =             require(&quot;./dataRenderer/DataRenderer&quot;);
+
+/**
+ * A static reference to the EnvironmentRenderer class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property EnvironmentRenderer
+ * @type Class
+ */
+T3D.EnvironmentRenderer =     require(&quot;./dataRenderer/EnvironmentRenderer&quot;);
+
+/**
+ * A static reference to the HavokRenderer class, the preferred way of
+ * accessing this class.
+ * 
+ * @final
+ * @property HavokRenderer
+ * @type Class
+ */
+T3D.HavokRenderer =         require(&quot;./dataRenderer/HavokRenderer&quot;);
+
+/**
+ * A static reference to the PropertiesRenderer class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property PropertiesRenderer
+ * @type Class
+ */
+T3D.PropertiesRenderer =     require(&quot;./dataRenderer/PropertiesRenderer&quot;);
+
+/**
+ * A static reference to the ModelRenderer class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property ModelRenderer
+ * @type Class
+ */
+T3D.ModelRenderer =         require(&quot;./dataRenderer/ModelRenderer&quot;);
+
+/**
+ * A static reference to the TerrainRenderer class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property TerrainRenderer
+ * @type Class
+ */
+T3D.TerrainRenderer =         require(&quot;./dataRenderer/TerrainRenderer&quot;);
+
+/**
+ * A static reference to the ZoneRenderer class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property ZoneRenderer
+ * @type Class
+ */
+T3D.ZoneRenderer =             require(&quot;./dataRenderer/ZoneRenderer&quot;);
+
+/**
+ * A static reference to the StringRenderer class, the preferred way of
+ * accessing this class.
+ *
+ * @final
+ * @property StringRenderer
+ * @type Class
+ */
+T3D.StringRenderer =         require(&quot;./dataRenderer/StringRenderer&quot;);
+
+
+
+
+/* LOGGING */
+
+/**
+ * A static reference to the static Logger class, the preferred way of
+ * accessing this class. A simple way of providing your own logging methods
+ * is to simply overwrite any or all of the logging methods specified in 
+ * {{#crossLink &quot;Logger/logFunctions:property&quot;}}{{/crossLink}}
+ *
+ * @property Logger
+ * @type Class
+ */
+T3D.Logger = require(&quot;./Logger&quot;);
+
+
+/* SETTINGS */
+
+/**
+ * Contains a list of known map fileID:s and their names. Used in order to quickly
+ * look up what maps are in a .dat file. Note that this property is hard coded and
+ * has high probablity of being outdated. Also note that the names are just guesses
+ * by RequestTimeout.
+ *
+ * The format of this list objects is
+ *
+ * 
+ *     { 
+ *      maps : [
+ *              {
+ *                 name:&quot;World Area Name&quot;,
+ *                   maps:[
+ *                     { fileName :&quot;[numeric fileId].data&quot;, name:&quot;Map Name One&quot; },
+ *                       { fileName :&quot;[numeric fileId].data&quot;, name:&quot;Map Name Two&quot; },        
+ *                     { fileName :&quot;[numeric fileId].data&quot;, name:&quot;Map Name Three&quot; }
+ *                  ]
+ *           },
+ *             {
+ *                name:&quot;Another World Area Name&quot;,
+ *                    maps:[
+ *                        { fileName :&quot;[numeric fileId].data&quot;, name:&quot;Map Name 408&quot; }
+ *                ]
+ *             }
+ *         ]
+ *   }
+ *
+ * @final
+ * @property MapFileList
+ * @type Object
+ */
+T3D.MapFileList =     require(&quot;./MapFileList&quot;);
+
+/* UTILS */
+
+/**
+ * A static reference to the MaterialUtils class.
+ *
+ * @final
+ * @property MaterialUtils
+ * @type Class
+ */
+T3D.MaterialUtils = require(&#x27;./util/MaterialUtils.js&#x27;);
+
+/**
+ * A static reference to the MathUtils class.
+ *
+ * @final
+ * @property MathUtils
+ * @type Class
+ */
+T3D.MathUtils = require(&#x27;./util/MathUtils.js&#x27;);
+
+/**
+ * A static reference to the ParserUtils class.
+ *
+ * @final
+ * @property ParserUtils
+ * @type Class
+ */
+T3D.ParserUtils = require(&#x27;./util/ParserUtils.js&#x27;);
+
+
+/**
+ * A static reference to the RenderUtils class.
+ *
+ * @final
+ * @property RenderUtils
+ * @type Class
+ */
+T3D.RenderUtils = require(&#x27;./util/RenderUtils.js&#x27;);
+
+
+/* PRIVATE METHODS */
+
+/**
+ * Performs checks for required browser capabilities and required third party libraries.
+ * Loggs any warnings or error messages.
+ * 
+ * @private
+ * @method  checkRequirements
+ * @return {Number} The ammount of errors and warnings generated.
+ */
+function checkRequirements(){
+    var numErrors = 0;
+    var is_chrome = navigator.userAgent.toLowerCase().indexOf(&#x27;chrome&#x27;) &gt; -1;
+    if(!is_chrome){
+        T3D.Logger.log(
+            T3D.Logger.TYPE_ERROR,
+            &quot;T3D inflation requires Google Chrome.&quot;
+        );
+        numErrors++;
+    }
+
+    if(typeof DataStream === &quot;undefined&quot;){
+        T3D.Logger.log(
+            T3D.Logger.TYPE_ERROR,
+            &quot;T3D core functionality requires DataStream library.&quot;
+        );
+        numErrors++;
+    }
+
+    if(typeof THREE === &quot;undefined&quot;){
+        T3D.Logger.log(
+            T3D.Logger.TYPE_WARNING,
+            &quot;T3D mesh generation requires three.js library.&quot;
+        );
+        numErrors++;
+    }
+
+    if(numErrors&lt;1){
+        T3D.Logger.log(
+            T3D.Logger.TYPE_MESSAGE,
+            &quot;Tyria 3D API v&quot;+T3D.version+&quot; initialized.&quot;
+        );
+    }
+
+    return numErrors;
+}
+
+/**
+ * Performs a quick and dirty check to find what chunk name definitions 
+ * appear multiple times in th formats array. Note that anything that
+ * appears more than 2 times wil get a too hight value due to the 
+ * algorithm being... incorrect.
+ *
+ * @private
+ * @method findDuplicateChunkDefs
+ * @return {Object} An object mapping duplicate chunk definition names.
+ * to the number of apperances.
+ */
+function findDuplicateChunkDefs(){
+    var dups = {};
+    T3D.formats.forEach(
+        function(f1){
+
+            T3D.formats.forEach(
+                function(f2){
+                    if(f2.name == f1.name &amp;&amp; f2 !== f1){
+                        if(dups[f1.name]){
+                            dups[f1.name]++;
+                        }
+                        else{
+                            dups[f1.name]=1;
+                        }
+                    }
+                }
+            );
+        }
+    );
+    return dups
+}
+
+
+/* PUBLIC METHODS */
+
+
+/**
+ * Creates a new instance of LocalReader with an pNaCl inflater connected to it.
+ * 
+ * @method getLocalReader
+ * @async
+ * @param  {File}       file        Core JS File instance, must refer to a GW2 .dat file
+ * @param  {Function}    callback    Callback function, fired when the file index is fully
+ *                                     constructed. Takes no arguments.
+ *                                     
+ * @param  {String}     inflaterURL URL to the inflater .mft file. If omitted
+ *                                   _settings.inflaterURL will be used instead.
+ * 
+ * @return {LocalReader}            The contructed LocalReader, note that this object
+ *                                     will not be fully initialized until the callback
+ *                                     is fired.
+ */
+T3D.getLocalReader = function(file, callback, inflaterURL, logger){
+
+    /// Create Inflater for this file reader.
+    /// We use a wrapper to catch the events.
+    /// We use the embed tag itself for posing messages.
+    
+    var pNaClWrapper = document.createElement(&quot;div&quot;); 
+    pNaClWrapper.setAttribute(&quot;id&quot;, &quot;pNaClListener&quot;);
+    
+    var pNaClEmbed = document.createElement(&quot;embed&quot;);
+    pNaClEmbed.setAttribute(&quot;type&quot;, &quot;application/x-pnacl&quot;);
+
+    pNaClEmbed.style.position =&quot;absolute&quot;;
+    pNaClEmbed.style.height = 0;
+    pNaClEmbed.style.width = 0;
+    pNaClEmbed.setAttribute(&quot;src&quot;, inflaterURL ? inflaterURL : _settings.inflaterURL);
+
+    /// Add the objects to the DOM
+    pNaClWrapper.appendChild(pNaClEmbed);
+    document.body.appendChild(pNaClWrapper);
+
+    /// Connect the provided file reference to a new LocalReader.
+    var lrInstance = new LocalReader(file, _version, logger);
+
+    /// Give the LocalReader access to the inflater.
+    lrInstance.connectInflater(pNaClEmbed, pNaClWrapper);
+
+    /// Parse the DAT file MFT header. This must be done oncein order to access
+    /// any files in the DAT.
+    lrInstance.parseHeaderAsync(callback);
+
+    /// Return file reader object
+    return lrInstance;    
+}
+
+/**
+ * Utility method for acceccing a list containing information about all files
+ * in the .dat connected to the provided LocalReader instance. This method first
+ * tries to read a local indexing list from the client&#x27;s localstorage and
+ * fallbacks to generating the list by scanning the MFT indices of the .dat
+ * and peeking each file in order to find out what filetype it has.
+ *
+ * Note that peeking the files is the time consuming task, so if you don&#x27;t want
+ * yout application to spend time indexing the .dat and have a priori knowledge
+ * about the required file Id&#x27;s you should not use this method.
+ * 
+ * @method  getFileListAsync
+ * @async
+ * @param  {LocalReader}    localReader A fully initialized LocalReader instance
+ * @param  {Function}        callback    Fires when the index has been loaded
+ *                                         from the localstorage or after it has
+ *                                         been built and stored in localstorage.
+ *                                         Takes the generated object list of
+ *                                         files as an argument. This list groups
+ *                                         arrays of MFT indices per file type,
+ *                                         for exmample:
+ *
+ * 
+ *     {
+ *          &quot;Unknown&quot;    : [444, 555, 333],
+ *          &quot;MODL&quot;        : [444, 555, 333],
+ *           &quot;String&quot;    : [666, 777, 888]
+ *     }
+ * 
+ * For more details see
+ * {{#crossLink &quot;LocalReader/listFiles:method&quot;}}{{/crossLink}}
+ */
+T3D.getFileListAsync = function(localReader, callback){
+
+    /// Check local storage for an existing file list
+    var fileList = localReader.loadFileList();
+
+    /// If there is no cached list, look for pre-defined maps.
+    if(!fileList){
+        localReader.readFileListAsync(callback);
+    }
+
+    /// Otherwise, just fire the callback with the cached list
+    else{
+        callback(fileList);
+    }
+    
+}
+
+/**
+ * Utility method for acceccing a list containing information about all map files
+ * in the .dat connected to the provided LocalReader instance. This method first
+ * tries to read a local indexing list from the client&#x27;s localstorage and
+ * fallbacks to generating the list by scanning the MFT indices of the .dat
+ * and peeking each file in order to find out what filetype it has.
+ *
+ * If the searchAll flag is not set to true, this process will only scan files
+ * from the {{#crossLink &quot;T3D/MapFileList:property&quot;}}{{/crossLink}}
+ * 
+ * @method getMapListAsync
+ * @async
+ * @param {LocalReader}    localReader    A fully initialized LocalReader instance
+ * @param {Function}    callback    Fires when the index has been loaded
+ *                                     from the localstorage or after it has
+ *                                     been built and stored in localstorage.
+ *                                     Takes the generated object list of
+ *                                     files as an argument. This list groups
+ *                                     arrays of MFT indices per file type,
+ *                                     for exmample:
+ * 
+ *         {    
+ *             maps:[
+ *                 {
+ *                     name: &#x27;Heart of Maguuma&#x27;,
+ *                     maps: [
+ *                         {fileName:1151420, name:&#x27;HoT BWE3 Raid&#x27;},
+ *                         {fileName:969663, name:&#x27;Verdant Brink}
+ *                     ]
+ *                 },
+ *                 {
+ *                     name: &#x27;Unknown maps&#x27;,
+ *                     maps: [
+ *                         {fileName:12345678, name:&#x27;Unknown map 12345678&#x27;}
+ *                     ]
+ *                 }
+ *             ]
+ 
+ *        };
+ * @param {boolean} searchAll if true forces re-indexing of entire dat.
+ */
+T3D.getMapListAsync = function(localReader, callback, searchAll){
+
+    /// If seachAll flag is true, force a deep search
+    if(searchAll){
+        localReader.readMapListAsync(true, callback);
+        return;
+    }
+
+    /// Check local storage for an existing map list
+    var mapList = localReader.loadMapList();
+
+    /// If there is no cached list, look for pre-defined maps.
+    if(!mapList){
+        localReader.readMapListAsync(false, callback);
+    }
+
+    /// Otherwise, just fire the callback with the cached list
+    else{
+        callback(mapList);
+    }
+    
+}
+
+/**
+ * Utility method used for rendering map files. Loads a map file and applies
+ * the provided renderers to it.
+ * 
+ * @method renderMapContentsAsync
+ * @async
+ * @param  {LocalReader}    localReader A fully initialized LocalReader instance
+ * @param  {Number}           fileName    The File Id of a mapc file.
+ * @param  {Array}           renderers    An array of renderer classes. Each
+ *                                       class should extend 
+ *                                       {{#crossLink &quot;DataRenderer&quot;}}{{/crossLink}}
+ * @param  {Function}        callback    Callback function, takes the shared
+ *                                         renderer context as an argument.
+ * @param  {Class}            logger      A logger class of the same type as
+ *                                       {{#crossLink &quot;Logger&quot;}}{{/crossLink}}
+ */
+T3D.renderMapContentsAsync = function(localReader, fileName, renderers, callback, logger){
+
+    /// VO for storing result from renderers
+    var context = {};
+
+    /// Make sure we got an actuall ID number        
+    if(parseInt(fileName)){
+
+        /// File name is baseId, load using local reader.
+        localReader.loadFile(
+            fileName,
+            function(arrayBuffer){
+
+                /// Set up datastream
+                var ds = new DataStream(arrayBuffer, 0, DataStream.LITTLE_ENDIAN);
+
+                /// Initiate Map file object. Connect callback
+                var mapFile = new T3D.GW2File(ds, 0);
+
+                /// Populate VO by running the renderers
+                var runAllRenderers = function(i){
+                    
+                    /// Run each renderer
+                    if(i &lt; renderers.length ){
+                        T3D.runRenderer(
+                            renderers[i].renderClass,
+                            localReader,
+                            Object.assign(renderers[i].settings,{mapFile:mapFile}),
+                            context,
+                            runAllRenderers.bind(this,i+1)
+                        );
+                    }
+
+                    /// Fire callback with VO when done
+                    else{
+                        callback(context);
+                    }
+                };
+
+                /// Starting point for running each renderer
+                runAllRenderers(0);
+            }
+        );
+    }
+
+    /// Primitive error message...
+    else{
+        var outputLogger = logger ? logger : T3D.Logger;
+        outputLogger.log(
+            T3D.Logger.TYPE_ERROR,
+            &quot;Map id must be an integer!, was:&quot;,fileName
+        );
+    }    
+}
+
+/**
+ * Utility method for applying a single renderer to a LocalReader insatnce.
+ * 
+ * @method runRenderer
+ * @async
+ * 
+ * @param  {Class}        renderClass    A class extending 
+ *                                    {{#crossLink &quot;DataRenderer&quot;}}{{/crossLink}}
+ * @param  {LocalReader}localReader A fully initialized LocalReader instance
+ * @param  {Object}        settings    Settings passed to the renderer. Often
+ *                                   specifies thinks like what file ID should
+ *                                   be loaded.
+ * @param  {Object}        context     The shared renderer context value object.
+ * @param  {Function}     cb          Callback method passed to the renderAsync
+ *                                     method of the renderer.
+ */
+T3D.runRenderer = function(renderClass, localReader , settings, context, cb){
+    var r = new renderClass(
+        localReader,
+        settings,
+        context
+    );
+
+    r.renderAsync(cb);
+}
+
+
+/**
+ * @method getContextValue
+ * @param  {Object} context          A shared renderer context value object.
+ * @param  {Class}     clazz            A class extending
+ *                                    {{#crossLink &quot;DataRenderer&quot;}}{{/crossLink}}.
+ *                                    Specifies for renderer class you want to read 
+ *                                    output.
+ * @param  {String} propName         The name of the property written by the
+ *                                    renderer that should retrtieved.
+ * @param  {any}     defaultValue     This value is passed back if no data could
+ *                                  be found.
+ * @return {any}                    The specified value from the conext if any,
+ *                                  otherwise defaultValue.
+ */
+T3D.getContextValue = function(context, clazz , propName, defaultValue){
+    var output = context[clazz.name];
+    if(output){
+        return output[propName] ? output[propName] : defaultValue;
+    }
+    return defaultValue;
+}
+
+/**
+ * Check if the client web browser can render WebGL 3D content.
+ * 
+ * @private
+ * @method hasWebGL
+ * @param  {boolean} return_context flag making this method return the canvas object instead of true
+ * @return {boolean} true if the client is WebGL enabled, false otherwise
+ */
+T3D.hasWebGL = function(return_context)
+{
+    if (!!window.WebGLRenderingContext) {
+        var canvas = document.createElement(&quot;canvas&quot;),
+             names = [&quot;webgl&quot;, &quot;experimental-webgl&quot;, &quot;moz-webgl&quot;, &quot;webkit-3d&quot;],
+           context = false;
+ 
+        for(var i=0;i&lt;4;i++) {
+            try {
+                context = canvas.getContext(names[i]);
+                if (context &amp;&amp; typeof context.getParameter == &quot;function&quot;) {
+                    // WebGL is enabled
+                    if (return_context) {
+                        // return WebGL object if the function&#x27;s argument is present
+                        return {name:names[i], gl:context};
+                    }
+                    // else, return just true
+                    return true;
+                }
+            } catch(e) {}
+        }
+ 
+        // WebGL is supported, but disabled
+        return false;
+    }
+ 
+    // WebGL not supported
+    return false;
+}
+
+
+/// Library checks requirements on startup
+checkRequirements();
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

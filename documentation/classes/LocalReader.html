@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LocalReader - Tyria 3D Library</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="Tyria 3D Library" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/DataRenderer.html">DataRenderer</a></li>
+                                <li><a href="../classes/EnvironmentRenderer.html">EnvironmentRenderer</a></li>
+                                <li><a href="../classes/GW2Chunk.html">GW2Chunk</a></li>
+                                <li><a href="../classes/GW2File.html">GW2File</a></li>
+                                <li><a href="../classes/HavokRenderer.html">HavokRenderer</a></li>
+                                <li><a href="../classes/LocalReader.html">LocalReader</a></li>
+                                <li><a href="../classes/Logger.html">Logger</a></li>
+                                <li><a href="../classes/MaterialUtils.html">MaterialUtils</a></li>
+                                <li><a href="../classes/MathUtils.html">MathUtils</a></li>
+                                <li><a href="../classes/ModelRenderer.html">ModelRenderer</a></li>
+                                <li><a href="../classes/ParserUtils.html">ParserUtils</a></li>
+                                <li><a href="../classes/PropertiesRenderer.html">PropertiesRenderer</a></li>
+                                <li><a href="../classes/RenderUtils.html">RenderUtils</a></li>
+                                <li><a href="../classes/StringRenderer.html">StringRenderer</a></li>
+                                <li><a href="../classes/T3D.html">T3D</a></li>
+                                <li><a href="../classes/TerrainRenderer.html">TerrainRenderer</a></li>
+                                <li><a href="../classes/ZoneRenderer.html">ZoneRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/T3D.html">T3D</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>LocalReader Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_LocalReader_LocalReader.js.html#l17"><code>src\LocalReader\LocalReader.js:17</code></a>
+        </div>
+
+            Module: <a href="../modules/T3D.html">T3D</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>A statefull class that handles reading and inflating data from a local GW2 dat file.</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_LocalReader" class="method item">
+    <h3 class="name"><code>LocalReader</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>datFile</code>
+                </li>
+                <li class="arg">
+                        <code>version</code>
+                </li>
+                <li class="arg">
+                        <code>logger</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l17"><code>src\LocalReader\LocalReader.js:17</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">datFile</code>
+                        <span class="type">File</span>
+
+
+                    <div class="param-description">
+                        <p>A core JS File instance, must refer to the GW2 .dat</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">version</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>T3D version.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">logger</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p><a href="../classes/Logger.html" class="crosslink">Logger</a> object responsible for UI logging.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_connectInflater">connectInflater</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFileIndex">getFileIndex</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_inflate">inflate</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_listFiles">listFiles</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadFile">loadFile</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadFileList">loadFileList</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadFilePart">loadFilePart</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadMapList">loadMapList</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadTextureFile">loadTextureFile</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_NaClListener">NaClListener</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_parseHeaderAsync">parseHeaderAsync</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readANDatHeader">readANDatHeader</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readFileListAsync">readFileListAsync</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readMapListAsync">readMapListAsync</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readMFTHeader">readMFTHeader</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_readMFTIndexFile">readMFTIndexFile</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_storeFileList">storeFileList</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_storeMapList">storeMapList</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_connectInflater" class="method item">
+    <h3 class="name"><code>connectInflater</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>inflater</code>
+                </li>
+                <li class="arg">
+                        <code>inflaterWrapper</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l54"><code>src\LocalReader\LocalReader.js:54</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Registers a pNaCl inflaton program from the DOM to this instance.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">inflater</code>
+                        <span class="type">HTMLElement</span>
+
+
+                    <div class="param-description">
+                        <p>The embed element for the pNaCl program</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">inflaterWrapper</code>
+                        <span class="type">HTMLElement</span>
+
+
+                    <div class="param-description">
+                        <p>The element wrapping the embed</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getFileIndex" class="method item">
+    <h3 class="name"><code>getFileIndex</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>baseOrFileId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l720"><code>src\LocalReader\LocalReader.js:720</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Gets MFT index by fileId or baseId</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">baseOrFileId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>A file Id or base Id</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>MFT index</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_inflate" class="method item">
+    <h3 class="name"><code>inflate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>ds</code>
+                </li>
+                <li class="arg">
+                        <code>size</code>
+                </li>
+                <li class="arg">
+                        <code>{Number</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+                <li class="arg">
+                        <code>isImage</code>
+                </li>
+                <li class="arg">
+                        <code>capLength</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l871"><code>src\LocalReader\LocalReader.js:871</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Infaltes binary data using a pNaCl program. If the isImage flag is set the infalted data is
+also decoded if it contains DXT image data.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">ds</code>
+                        <span class="type">DataStream</span>
+
+
+                    <div class="param-description">
+                        <p>DataStream instance holding data to inflate</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">size</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Number if bytes to read</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">{Number</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>handle    Unique ID for this file</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>callback to register for this pNaCl task</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">isImage</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>Passed to the inflater in order to decode image data</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">capLength</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>Number of bytes to deflate.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_listFiles" class="method item">
+    <h3 class="name"><code>listFiles</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>uniqueIdxs</code>
+                </li>
+                <li class="arg">
+                        <code>type</code>
+                </li>
+                <li class="arg">
+                        <code>start</code>
+                </li>
+                <li class="arg">
+                        <code>length</code>
+                </li>
+                <li class="arg">
+                        <code>N</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l555"><code>src\LocalReader\LocalReader.js:555</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Lists all MFT indices grouped by file type. If a file type is specified only files of that type
+is added to the list.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">uniqueIdxs</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        <p>File MFT indices to look in.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">type</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Pack file type or file type to accept. If not set adds all files.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">start</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>uniqueIdxs start ofset</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">length</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>number of entries to scan in uniqueIdxs</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">N</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>Number of parallel event listeners to run while scanning. (Kinda like parallelism but not quite)</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fired when all files have been indexed. First argument is a list of
+MFT indices grouped by file type, for example
+{
+&quot;Unknown&quot;   : [444, 555, 333],
+&quot;MODL&quot;      : [444, 555, 333],
+&quot;String&quot;    : [666, 777, 888]
+}</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_loadFile" class="method item">
+    <h3 class="name"><code>loadFile</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>baseId</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+                <li class="arg">
+                        <code>isImage</code>
+                </li>
+                <li class="arg">
+                        <code>raw</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l796"><code>src\LocalReader\LocalReader.js:796</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads data from a file in the dat.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">baseId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Base or File id of the texture to load</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fires when the inflater has read the data.</p>
+<p>The passed arguments are
+-ArrayBuffer raw data
+-Number DXT Type if applicable
+-Number image width if applicable
+-Number image height if applicable</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">isImage</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">raw</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>If true, any infation is skipped and raw data is returned.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_loadFileList" class="method item">
+    <h3 class="name"><code>loadFileList</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l289"><code>src\LocalReader\LocalReader.js:289</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads the cached list of files corresponding to the reader's .dat from the localStorage.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Grouped List of files</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_loadFilePart" class="method item">
+    <h3 class="name"><code>loadFilePart</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>file</code>
+                </li>
+                <li class="arg">
+                        <code>offset</code>
+                </li>
+                <li class="arg">
+                        <code>length</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l923"><code>src\LocalReader\LocalReader.js:923</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads bytes from a big file. Uses offset and length (in bytes) in order to only load
+parts of the file that are used.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">file</code>
+                        <span class="type">File</span>
+
+
+                    <div class="param-description">
+                        <p>File object to read from</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">offset</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>Offset in bytes to start reading</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">length</code>
+                        <span class="type">type</span>
+
+
+                    <div class="param-description">
+                        <p>Number of bytes to read</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Two arguments are passed.</p>
+<p>The first is a DataStream object representation of the loaded data.</p>
+<p>The second is the length of the data.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_loadMapList" class="method item">
+    <h3 class="name"><code>loadMapList</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l308"><code>src\LocalReader\LocalReader.js:308</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads the cached list of maps corresponding to the reader's .dat from the localStorage.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Grouped List of maps</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_loadTextureFile" class="method item">
+    <h3 class="name"><code>loadTextureFile</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>baseId</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l778"><code>src\LocalReader\LocalReader.js:778</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads a bitmap from a texture file in the dat.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">baseId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Base or File id of the texture to load</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fires when the inflater has read the texture data.</p>
+<p>The passed arguments are
+-ArrayBuffer Bitmap
+-Number DXT Type
+-Number image width
+-Number image height</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_NaClListener" class="method item">
+    <h3 class="name"><code>NaClListener</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message_event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l77"><code>src\LocalReader\LocalReader.js:77</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Listener for pNaCl inflater.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message_event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data received from pNaCl program.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_parseHeaderAsync" class="method item">
+    <h3 class="name"><code>parseHeaderAsync</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l40"><code>src\LocalReader\LocalReader.js:40</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Parses the dat file main header and parses the MFT index</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fires when mft indexing is complete. No arguments</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_readANDatHeader" class="method item">
+    <h3 class="name"><code>readANDatHeader</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>ds</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l110"><code>src\LocalReader\LocalReader.js:110</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads the main header of this dat file and calls readMFTHeader
+in order to parse the MFT index.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">ds</code>
+                        <span class="type">DataStream</span>
+
+
+                    <div class="param-description">
+                        <p>DataStream instance holding header data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_readFileListAsync" class="method item">
+    <h3 class="name"><code>readFileListAsync</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l354"><code>src\LocalReader\LocalReader.js:354</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads the file type of each file in the dat and stores the resulting list in
+the browser's local storage.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fired when the list is generated and stores</p>
+<p>First argument is the a list of mft indices grouped by file type.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_readMapListAsync" class="method item">
+    <h3 class="name"><code>readMapListAsync</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>searchAll</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+        <span class="flag async">async</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l402"><code>src\LocalReader\LocalReader.js:402</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Looks up mft indices for all mapc pack files in the dat. Either looks trough all files or
+only the list defined in <a href="../classes/T3D.html#property_MapFileList" class="crosslink">MapFileList</a>.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">searchAll</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>if true forces re-indexing of entire dat.
+If false only reads indices specified in <a href="../classes/T3D.html#property_MapFileList" class="crosslink">MapFileList</a>.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Fired when the list is generated</p>
+<p>First argument is the a list of mft indices grouped by file type. For exmample:</p>
+<pre><code>    {   
+        maps:[
+            {
+                name: 'Heart of Maguuma',
+                maps: [
+                    {fileName:1151420, name:'HoT BWE3 Raid'},
+                    {fileName:969663, name:'Verdant Brink}
+                ]
+            },
+            {
+                name: 'Unknown maps',
+                maps: [
+                    {fileName:12345678, name:'Unknown map 12345678'}
+                ]
+            }
+        ]
+
+    };</code></pre>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_readMFTHeader" class="method item">
+    <h3 class="name"><code>readMFTHeader</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>ds</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l139"><code>src\LocalReader\LocalReader.js:139</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads the MFT header and calls readMFTIndexFile
+in order to parse the MFT index.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">ds</code>
+                        <span class="type">DataStream</span>
+
+
+                    <div class="param-description">
+                        <p>DataStream instance holding header data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_readMFTIndexFile" class="method item">
+    <h3 class="name"><code>readMFTIndexFile</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>ds</code>
+                </li>
+                <li class="arg">
+                        <code>size</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l203"><code>src\LocalReader\LocalReader.js:203</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Reads the main MFT index file and builds MFT indices used for acceccing
+files refered to by MFT index, File ID or Base ID.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">ds</code>
+                        <span class="type">DataStream</span>
+
+
+                    <div class="param-description">
+                        <p>DataStream instance holding header data</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">size</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The size of the index file</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_storeFileList" class="method item">
+    <h3 class="name"><code>storeFileList</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>datFile</code>
+                </li>
+                <li class="arg">
+                        <code>fileList</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l328"><code>src\LocalReader\LocalReader.js:328</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Stores a files list array in the browser's local storage.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">datFile</code>
+                        <span class="type">File</span>
+
+
+                    <div class="param-description">
+                        <p>The File instance used to build the file list.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">fileList</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The list to store.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_storeMapList" class="method item">
+    <h3 class="name"><code>storeMapList</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>datFile</code>
+                </li>
+                <li class="arg">
+                        <code>mapList</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_LocalReader_LocalReader.js.html#l342"><code>src\LocalReader\LocalReader.js:342</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Stores a map list array in the browser's localStorage.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">datFile</code>
+                        <span class="type">File</span>
+
+
+                    <div class="param-description">
+                        <p>The File instance used to build the map list.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">mapList</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The list to store.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\dataRenderer\PropertiesRenderer.js - Tyria 3D Library</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="Tyria 3D Library" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/DataRenderer.html">DataRenderer</a></li>
+                                <li><a href="../classes/EnvironmentRenderer.html">EnvironmentRenderer</a></li>
+                                <li><a href="../classes/GW2Chunk.html">GW2Chunk</a></li>
+                                <li><a href="../classes/GW2File.html">GW2File</a></li>
+                                <li><a href="../classes/HavokRenderer.html">HavokRenderer</a></li>
+                                <li><a href="../classes/LocalReader.html">LocalReader</a></li>
+                                <li><a href="../classes/Logger.html">Logger</a></li>
+                                <li><a href="../classes/MaterialUtils.html">MaterialUtils</a></li>
+                                <li><a href="../classes/MathUtils.html">MathUtils</a></li>
+                                <li><a href="../classes/ModelRenderer.html">ModelRenderer</a></li>
+                                <li><a href="../classes/ParserUtils.html">ParserUtils</a></li>
+                                <li><a href="../classes/PropertiesRenderer.html">PropertiesRenderer</a></li>
+                                <li><a href="../classes/RenderUtils.html">RenderUtils</a></li>
+                                <li><a href="../classes/StringRenderer.html">StringRenderer</a></li>
+                                <li><a href="../classes/T3D.html">T3D</a></li>
+                                <li><a href="../classes/TerrainRenderer.html">TerrainRenderer</a></li>
+                                <li><a href="../classes/ZoneRenderer.html">ZoneRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/T3D.html">T3D</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src\dataRenderer\PropertiesRenderer.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+var Utils = require(&quot;../util/RenderUtils&quot;);
+var DataRenderer = require(&#x27;./DataRenderer&#x27;);
+
+/**
+ *
+ * A renderer that generates property models for a map.
+ * 
+ * @class PropertiesRenderer
+ * @constructor
+ * @extends DataRenderer
+ * @param  {LocalReader} localReader  The LocalReader instance to read data from.
+ * @param  {Object} settings     Any settings used by this renderer.
+ * *Must* specify &quot;mapFile&quot;, a GW2File.
+ * @param  {Object} context      Shared value object between renderers.
+ * @param  {Logger} logger       The logging class to use for progress, warnings, errors et cetera.
+ */
+function PropertiesRenderer(localReader, settings, context, logger){
+    DataRenderer.call(this, localReader, settings, context, logger);
+    this.mapFile = this.settings.mapFile;
+}
+
+/// DataRenderer inheritance:
+PropertiesRenderer.prototype = Object.create(DataRenderer.prototype);
+PropertiesRenderer.prototype.constructor = PropertiesRenderer;
+
+/**
+ * Renders all property meshes in a GW2 map described by the map&#x27;s PROP chunk.
+ * Output fileds generated:
+ *
+ * - *meshes* An array of THREE.Mesh objects visualizing all property models refered by this map.
+ * 
+ * @method  renderAsync
+ * @async
+ * @param  {Function} callback Fires when renderer is finished, does not take arguments.
+ */
+PropertiesRenderer.prototype.renderAsync = function(callback){
+    var self = this;
+
+    self.getOutput().meshes = [];
+
+    var propertiesChunkData =  this.mapFile.getChunk(&quot;prp2&quot;).data;
+
+    if(!propertiesChunkData){
+        renderCallback();
+        return;
+    }
+
+    var props = propertiesChunkData.propArray;
+    var animProps =propertiesChunkData.propAnimArray;
+    var instanceProps = propertiesChunkData.propInstanceArray;
+    var metaProps = propertiesChunkData.propMetaArray;
+
+    /// Concat all prop types
+    props = props
+        .concat(animProps)
+        .concat(instanceProps)
+        .concat(metaProps);
+
+    /// Create mesh cache
+    self.meshCache = {};
+    self.textureCache = {};
+
+    // For now, we&#x27;ll do all load in serial
+    // TODO: load unique meshes and textures in parallell (asynch), then render!
+    var lastPct = -1;
+
+    var renderIndex = function(idx){
+
+        if(idx&gt;= props.length){
+
+            /// Empty mesh cache
+            self.meshCache = {};
+            self.textureCache = {};
+            callback();
+            return;
+        }
+
+        var pct = Math.round(1000.0*idx / props.length);
+        pct/=10.0;
+        
+        /// Log progress
+        if(lastPct!=pct){
+            var pctStr = pct +
+                ( pct.toString().indexOf(&quot;.&quot;)&lt;0 ? &quot;.0&quot;:&quot;&quot; );
+
+            self.logger.log(
+                T3D.Logger.TYPE_PROGRESS,
+                &quot;Loading 3D Models (Props)&quot;, pctStr
+            );
+            lastPct = pct;
+        }
+
+        /// Read prop at index.
+        var prop = props[idx];                                
+
+        /// Adds a single mesh to a group.
+        var addMeshToLOD = function(mesh, groups, lod, prop, needsClone){
+
+            /// Read lod distance before overwriting mesh variable
+            var lodDist = prop.lod2 != 0 ? prop.lod2 : mesh.lodOverride[1];
+
+            /// Read flags before overwriting mesh variable
+            var flags = mesh.flags;
+
+            /// Mesh flags are 0 1 4
+            /// For now, use flag 0 as the default level of detail
+            if(flags==0)
+                lodDist=0;
+            
+            /// Create new empty mesh if needed
+            if(needsClone){
+                mesh = new THREE.Mesh( mesh.geometry, mesh.material );
+            }
+
+            mesh.updateMatrix();
+            mesh.matrixAutoUpdate = false;
+
+            // Find group for this LOD distance
+            if(groups[lodDist]){
+                groups[lodDist].add(mesh);
+            }
+            // Or create LOD group and add to a level of detail
+            // WIP, needs some testing!
+            else{
+                var group = new THREE.Group();
+                group.updateMatrix();
+                group.matrixAutoUpdate = false;
+                group.add(mesh);
+                groups[lodDist] = group;
+                lod.addLevel(group,lodDist);
+            }
+
+            return lodDist;
+        }
+
+        /// Adds array of meshes to the scene, also adds transform clones
+        var addMeshesToScene = function(meshArray, needsClone, boundingSphere){
+            
+            ///Add original 
+
+            /// Make LOD object and an array of groups for each LOD level
+            var groups = {};
+            var lod = new THREE.LOD();
+
+            /// Each mesh is added to a group corresponding to its LOD distane
+            var maxDist = 0;
+            meshArray.forEach(function(mesh){
+                maxDist = Math.max( maxDist, addMeshToLOD(mesh,groups,lod,prop,needsClone) );
+            });
+
+            /// Add invisible level
+            //lod.addLevel(new THREE.Group(),10000);
+
+            /// Set position, scale and rotation of the LOD object
+            if(prop.rotation){
+                lod.rotation.order = &quot;ZXY&quot;;
+                //[&quot;x&quot;,&quot;float32&quot;,&quot;z&quot;,&quot;float32&quot;,&quot;y&quot;,&quot;float32&quot;],
+                lod.rotation.set(prop.rotation[0], -prop.rotation[2], -prop.rotation[1]);
+            }
+            lod.scale.set( prop.scale, prop.scale, prop.scale );
+            lod.position.set(prop.position[0], -prop.position[2], -prop.position[1]);
+               
+
+               lod.boundingSphereRadius = ( boundingSphere &amp;&amp; boundingSphere.radius ? boundingSphere.radius : 1.0) * prop.scale;
+
+            lod.updateMatrix();
+            lod.matrixAutoUpdate = false;
+
+            /// Show highest level always
+            //lod.update(lod);
+
+            //Add LOD containing mesh instances to scene
+            self.getOutput().meshes.push(lod);
+                            
+            // Add one copy per transform, needs to be within it&#x27;s own LOD
+            if(prop.transforms){
+
+                prop.transforms.forEach(function(transform){
+                    
+                    /// Make LOD object and an array of groups for each LOD level
+                    var groups = {};
+                    var lod = new THREE.LOD();
+
+                    /// Each mesh is added to a group corresponding to its LOD distane
+                    var maxDist = 0;
+                    meshArray.forEach(function(mesh){
+                        maxDist = Math.max( maxDist, addMeshToLOD(mesh,groups,lod,prop,true) );
+                    });
+
+                    /// Add invisible level
+                    //lod.addLevel(new THREE.Group(),10000);
+
+                    /// Set position, scale and rotation of the LOD object
+                    if(transform.rotation){
+                        lod.rotation.order = &quot;ZXY&quot;;
+                        lod.rotation.set(transform.rotation[0], -transform.rotation[2], -transform.rotation[1]);
+                    }
+                    lod.scale.set( transform.scale, transform.scale, transform.scale );
+                    lod.position.set(transform.position[0], -transform.position[2], -transform.position[1]);
+
+                    lod.updateMatrix();
+                    lod.matrixAutoUpdate = false;
+
+                    lod.boundingSphereRadius = ( boundingSphere &amp;&amp; boundingSphere.radius ? boundingSphere.radius : 1.0) * prop.scale;
+
+                    /// Show highest level always
+                    //lod.update(lod);
+
+                    /// Add LOD containing mesh instances to scenerender: function(propertiesChunkHeader, map, localReader, renderCallback){
+                    self.getOutput().meshes.push(lod);
+                });
+            }
+        }
+
+        /// Get meshes
+        var showUnmaterialed = false;
+        Utils.getMeshesForFilename(prop.filename, prop.color, self.localReader, self.meshCache, self.textureCache, showUnmaterialed,
+            function(meshes, isCached, boundingSphere){
+            
+                if(meshes){
+                    addMeshesToScene(meshes, isCached, boundingSphere);
+                }
+
+                /// Render next prop
+                renderIndex(idx+1);
+            }
+        );
+
+        
+
+    };
+
+    /// Start serial loading and redering. (to allow re-using meshes and textures)
+    renderIndex(0);
+}
+
+
+/**
+ * TODO: write description. Used for export feature
+ * @method getFileIdsAsync
+ * @param  {Function} callback [description]
+ * @return {[type]}            [description]
+ */
+PropertiesRenderer.prototype.getFileIdsAsync = function(callback){
+    var fileIds = [];
+
+    var propertiesChunkData =  this.mapFile.getChunk(&quot;prp2&quot;).data;
+
+    var props = propertiesChunkData.propArray;
+    var animProps = propertiesChunkData.propAnimArray;
+    var instanceProps = propertiesChunkData.propInstanceArray;
+    var metaProps = propertiesChunkData.propMetaArray;
+
+    props = props
+        .concat(animProps)
+        .concat(instanceProps)
+        .concat(metaProps);
+
+    var getIdsForProp = function(idx){
+
+        if(idx&gt;=props.length){
+            callback(fileIds);
+            return;
+        }
+
+        if(idx%100==0){
+
+            this.logger.log(
+                T3D.Logger.TYPE_MESSAGE,
+                &quot;getting ids for entry&quot;,idx,&quot;of&quot;,props.length
+            );
+        }
+
+        var prop = props[idx];
+        Utils.getFilesUsedByModel(
+            prop.filename,
+            localReader,
+            function(propFileIds){
+                fileIds = fileIds.concat(propFileIds);
+                getIdsForProp(idx+1);
+            }
+        );
+
+    };
+
+    getIdsForProp(0);
+};
+
+module.exports = PropertiesRenderer;
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
